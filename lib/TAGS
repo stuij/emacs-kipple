@@ -1,0 +1,1344 @@
+
+bubble-buffer.el,210
+(defvar bubble-buffer-max-display-length 64,2307
+(defvar bubble-buffer-omit-regexp 68,2448
+(defun bubble-buffer-omit-buffer 75,2741
+(defun bubble-buffer-next(82,3014
+(defun bubble-buffer-previous(119,4550
+
+css-mode.el,1311
+(defvar cssm-version 7,133
+(defvar cssm-indent-level 67,2252
+(defvar cssm-mirror-mode 68,2326
+(defvar cssm-newline-before-closing-bracket 71,2436
+(defvar cssm-indent-function 74,2586
+(defvar cssm-properties80,2792
+(defvar cssm-properties-alist111,4526
+(defvar cssm-keywords 116,4700
+(defvar cssm-pseudos127,4942
+(defun cssm-list-2-regexp(135,5135
+(defvar cssm-font-lock-keywords145,5430
+(defvar cssm-mode-map 160,6141
+(defun cssm-insert-right-brace-and-indent(182,6946
+(defun cssm-inside-atmedia-rule(188,7055
+(defun cssm-rule-is-atmedia(210,7727
+(defun cssm-find-column(218,7967
+(defun cssm-indent-line(260,9085
+(defun cssm-old-style-indenter(288,9774
+(defun cssm-c-style-indenter(307,10159
+(define-skeleton cssm-insert-curlies328,10618
+(define-skeleton cssm-insert-quotes333,10778
+(define-skeleton cssm-insert-parenthesises337,10873
+(define-skeleton cssm-insert-comment341,10980
+(define-skeleton cssm-insert-url345,11067
+(define-skeleton cssm-insert-brackets349,11140
+(defun cssm-enter-mirror-mode(353,11237
+(defun cssm-leave-mirror-mode(362,11677
+(defun cssm-property-at-point(372,12067
+(defun cssm-maximum-common(380,12297
+(defun cssm-common-beginning(391,12687
+(defun cssm-complete-property-frame(397,12916
+(defun cssm-complete-property(409,13349
+(defun css-mode(425,13883
+
+cua.el,7971
+(defgroup CUA-mode 371,15554
+(defcustom CUA-mode 381,15851
+(defcustom CUA-mode-emacs-bindings 401,16641
+(defcustom CUA-mode-remap-cx-shift-only 407,16920
+(defcustom CUA-mode-highlight-shift-only 414,17173
+(defcustom CUA-mode-inhibit-method 424,17557
+(defcustom CUA-mode-inhibit-delay 449,18695
+(defcustom CUA-mode-register-commands-prefix 456,18921
+(defcustom CUA-mode-keep-region-after-copy 467,19337
+(defcustom CUA-mode-auto-expand-rectangles 472,19479
+(defcustom CUA-mode-global-mark-visible 480,19826
+(defcustom CUA-mode-feature-global-mark 485,19971
+(defcustom CUA-mode-feature-registers 491,20188
+(defcustom CUA-mode-delete-to-register-0 497,20409
+(defcustom CUA-mode-auto-help 502,20560
+(defcustom CUA-mode-use-modeline 507,20710
+(defcustom CUA-mode-use-hyper-key 512,20851
+(defcustom CUA-debug 521,21136
+(defface CUA-rectangle-face 526,21231
+(defface CUA-rectangle-noselect-face 530,21339
+(defface CUA-global-mark-face 534,21475
+(defcustom CUA-mode-use-cursor-colors 541,21736
+(defcustom CUA-mode-normal-cursor-color 546,21876
+(defcustom CUA-mode-read-only-cursor-color 563,22574
+(defcustom CUA-mode-overwrite-cursor-color 568,22722
+(defcustom CUA-mode-global-mark-cursor-color 574,22932
+(defcustom CUA-mode-global-mark-cursor-blink 580,23115
+(defvar CUA-prefix-key-mappings589,23318
+(defvar CUA-ctl-x-8-prefix-key 598,23605
+(defvar CUA-explicit-region-start 606,23896
+(defvar CUA-last-action 609,23991
+(defvar CUA-cur-register 612,24055
+(defvar CUA-mode-status 615,24131
+(defvar CUA-orig-command 618,24193
+(defun CUA-register 623,24289
+(defvar CUA-rectangle 637,24660
+(defvar CUA-last-rectangle 645,25076
+(defvar CUA-next-rectangle 650,25196
+(defvar CUA-start-point 654,25355
+(defvar CUA-rect-last-killed 656,25385
+(defvar CUA-rect-overlays 659,25492
+(defun CUA-rect-top 662,25580
+(defun CUA-rect-bot 672,25891
+(defun CUA-rect-left 682,26195
+(defun CUA-rect-right 691,26469
+(defun CUA-rect-corner 700,26745
+(defun CUA-rect-right-side 711,27050
+(defun CUA-rect-column 717,27268
+(defun CUA-rect-insert-col 722,27368
+(defun CUA-rect-padding 732,27653
+(defun CUA-rect-restriction 738,27804
+(defun CUA-rect-assert 746,28016
+(defun CUA-rect-get-corners 753,28252
+(defun CUA-rect-set-corners 779,29014
+(defun CUA-forward-line 801,29847
+(defun CUA-rect-resize 807,29964
+(defun CUA-rect-move 907,32886
+(defun CUA-rect-operation 943,33677
+(defun CUA-pad-rectangle 1015,35792
+(defun CUA-delete-rectangle 1019,35909
+(defun CUA-extract-rectangle 1024,36048
+(defun CUA-insert-rectangle 1031,36245
+(defun CUA-rect-copy-as-kill 1059,37107
+(defun CUA-rect-activate 1069,37489
+(defvar CUA-save-point 1086,38136
+(defun CUA-rect-deactivate 1088,38165
+(defun CUA-rect-highlight 1096,38460
+(defun CUA-rect-indent-rectangle 1137,40027
+(defun CUA-exchange-point-and-mark 1164,40768
+(defvar CUA-global-mark 1177,41102
+(defvar CUA-global-mark-overlay 1180,41165
+(defun CUA-global-mark-active 1183,41241
+(defun CUA-global-mark-deactivate 1186,41342
+(defun CUA-global-mark-activate 1195,41633
+(defun CUA-cmd-toggle-global-mark 1210,42158
+(defun CUA-global-mark-insert 1229,42972
+(defun CUA-global-mark-delete-char 1242,43422
+(defun CUA-global-mark-copy-region 1253,43823
+(defun CUA-global-mark-move-region 1274,44624
+(defvar CUA-global-mark-do-rect-as-text 1306,45852
+(defun CUA-global-mark-copy-rect 1308,45898
+(defun CUA-global-mark-move-rect 1329,46622
+(defvar CUA-undo-list 1367,48009
+(defvar CUA-undo-max 1370,48072
+(defun CUA-rect-undo-boundary 1373,48162
+(defun CUA-undo 1381,48464
+(defvar CUA-tidy-undo-counter 1397,48906
+(defun CUA-tidy-undo-lists 1400,49005
+(defun CUA-indent-active-region 1431,50069
+(defun CUA-set-mark 1442,50465
+(defun CUA-keep-active 1461,51088
+(defun CUA-cmd-copy-region 1473,51319
+(defun CUA-cmd-cut-region 1484,51672
+(defun CUA-cmd-delete-region 1497,52043
+(defun CUA-cmd-indent-region-left 1507,52331
+(defun CUA-cmd-indent-region-right 1515,52561
+(defun CUA-cmd-begin-rectangle 1527,52830
+(defun CUA-cmd-end-rectangle 1545,53402
+(defun CUA-cmd-restrict-regexp-rectangle 1553,53591
+(defun CUA-cmd-restrict-prefix-rectangle 1567,54106
+(defun CUA-cmd-move-rectangle-up 1581,54604
+(defun CUA-cmd-move-rectangle-down 1585,54680
+(defun CUA-cmd-move-rectangle-left 1589,54760
+(defun CUA-cmd-move-rectangle-right 1593,54840
+(defun CUA-cmd-copy-rectangle 1597,54922
+(defun CUA-cmd-cut-rectangle 1602,55051
+(defun CUA-cmd-delete-rectangle 1611,55272
+(defun CUA-cmd-toggle-rectangle 1619,55494
+(defun CUA-cmd-rotate-rectangle 1629,55726
+(defun CUA-cmd-toggle-rectangle-padding 1634,55870
+(defun CUA-cmd-do-rectangle-padding 1644,56192
+(defun CUA-cmd-open-rectangle 1652,56405
+(defun CUA-cmd-close-rectangle 1667,56923
+(defun CUA-cmd-blank-rectangle 1683,57535
+(defun CUA-cmd-align-rectangle 1699,58062
+(defun CUA-cmd-copy-rectangle-as-text 1717,58605
+(defun CUA-cmd-cut-rectangle-as-text 1736,59185
+(defun CUA-cmd-string-rectangle 1741,59354
+(defun CUA-cmd-fill-char-rectangle 1758,59978
+(defun CUA-cmd-replace-in-rectangle 1767,60314
+(defun CUA-cmd-incr-rectangle 1778,60772
+(defvar CUA-rect-seq-format 1799,61603
+(defun CUA-cmd-sequence-rectangle 1802,61690
+(defun CUA-cmd-upcase-rectangle 1823,62482
+(defun CUA-cmd-downcase-rectangle 1831,62732
+(defun CUA-rect-aux-replace 1839,62990
+(defun CUA-cmd-text-fill-rectangle 1891,64619
+(defun CUA-cmd-self-fill-rectangle 1903,65057
+(defun CUA-cmd-shell-command-on-rectangle 1910,65311
+(defun CUA-cmd-reverse-rectangle 1923,65820
+(defun CUA-cmd-scroll-rectangle-up 1928,65965
+(defun CUA-cmd-scroll-rectangle-down 1936,66216
+(defun CUA-action-insert-char-rectangle 1945,66492
+(defun CUA-cmd-delete-char-rectangle 1953,66676
+(defun CUA-cmd-mouse-set-rectangle-corner 1977,67386
+(defun CUA-cmd-copy-to-global-mark 2000,67961
+(defun CUA-cmd-copy1-to-global-mark 2010,68264
+(defun CUA-cmd-cut-to-global-mark 2019,68488
+(defun CUA-cmd-cut1-to-global-mark 2031,68843
+(defun CUA-cmd-delete-char-at-global-mark 2042,69125
+(defun CUA-cmd-delete-backward-char-at-global-mark 2050,69314
+(defun CUA-action-insert-char-at-global-mark 2058,69525
+(defun CUA-action-insert-newline-at-global-mark 2064,69713
+(defun CUA-cmd-insert-newline-at-global-mark 2071,69846
+(defun CUA-cmd-ignore 2080,70037
+(defun CUA-lookup-key 2083,70112
+(defvar CUA-region-commands2093,70257
+(defun CUA-action-move 2120,71630
+(defun CUA-action-cancel 2136,72300
+(defun CUA-action-delete-before 2146,72582
+(defun CUA-action-delete 2154,72801
+(defun CUA-action-cut 2163,73023
+(defun CUA-action-copy 2174,73374
+(defun CUA-action-paste 2185,73731
+(defun CUA-action-paste-pop 2223,75083
+(defvar CUA-ind-do-initialize 2232,75247
+(defun CUA-ind-init-indications 2234,75281
+(defvar CUA-ind-cursor-blink-timer 2253,76090
+(defvar CUA-ind-cursor-blink-off 2254,76130
+(defun CUA-ind-cursor-blink-toggle 2256,76169
+(defun CUA-ind-update-indications 2271,76630
+(defun CUA-absorb-prefix-arg 2306,77791
+(defun CUA-kbd-macro-fixup 2311,77972
+(defun CUA-prefix-handler 2319,78154
+(defun CUA-ctl-x-8-prefix-handler 2354,79402
+(defvar CUA-overriding-region-map 2371,80230
+(defvar CUA-overriding-rectangle-map 2374,80333
+(defvar CUA-overriding-global-mark-map 2377,80442
+(defvar CUA-overriding-global-mark-commands 2380,80555
+(defun CUA-lookup-overriding-maps 2384,80748
+(defun CUA-delete-selection 2408,81460
+(defun CUA-pre-hook 2418,81820
+(defun CUA-post-hook 2451,82948
+(defvar CUA-movement-keys2509,85148
+(defun CUA-help-for-region 2530,85940
+(defun CUA-help-for-rectangle 2536,86105
+(defun CUA-hyper-key 2542,86300
+(defun CUA-mode-init-maps 2554,86671
+(defun CUA-define-key 2643,91149
+(defun CUA-define-key-as 2658,91765
+(defun CUA-movement-key 2678,92484
+(defun CUA-mode-bindings 2691,92936
+(defun CUA-mode 2777,97285
+(defun CUA-mode-on 2832,99481
+(defun CUA-debug 2836,99536
+(defun CUA-remap-ctl-x-commands 2842,99661
+(defun CUA-keypad-bind 2857,100281
+(defun CUA-keypad-mode 2873,100808
+
+ebs.el,711
+(defgroup ebs 123,4101
+(defcustom ebs-exclude-buffer-regexps 127,4227
+(defcustom ebs-delay-time 136,4521
+(defvar ebs-buffer-list 144,4788
+(defvar ebs-cycle-buffer-string 147,4850
+(defvar ebs-highlight-buffer-start 150,4951
+(defvar ebs-highlight-buffer-end 151,4989
+(defvar ebs-buffer-counter 154,5052
+(defvar ebs-switch-state 158,5183
+(defun ebs-include-buffer-p 160,5212
+(defun ebs-calc-buffer-list 168,5503
+(defun ebs-mapconcat-function 179,5917
+(defun ebs-show-buffer-list 184,6089
+(defun ebs-switch-buffer 213,7268
+(defun ebs-index-switch 219,7386
+(defun ebs-cycle-switch 257,8861
+(defun ebs-pre-command-hook 284,9936
+(defvar ebs-keyboard-hashtb 290,10186
+(defun ebs-initialize 292,10234
+
+folding.el,6591
+(defvar folding-package-url-location1491,67393
+(defsubst folding-preserve-active-region 1595,70916
+(defvar folding-mode)1641,72531
+(defvar folding-stack 1679,73619
+(defvar folding-version 1683,73720
+(defgroup folding 1708,74403
+(defcustom folding-mode-prefix-key 1712,74476
+(defcustom folding-goto-key 1717,74619
+(defvar folding-mode-map 1725,74869
+(defvar folding-mode-prefix-map 1728,74948
+(defvar folding-mode 1732,75070
+(defmacro folding-kbd 1740,75239
+(defun folding-bind-default-mouse 1749,75524
+(defun folding-bind-terminal-keys 1764,76081
+(defun folding-bind-default-keys 1775,76573
+(defun folding-bind-backward-compatible-keys 1830,78269
+(defun folding-bind-outline-compatible-keys 1840,78634
+(defcustom folding-advice-instantiate 1900,80391
+(defcustom folding-shift-in-on-goto 1906,80527
+(defun folding-bind-foldout-compatible-keys 1957,82117
+(defvar folding-saved-local-keymap 1996,83419
+(defcustom folding-default-keys-function 2001,83576
+(defcustom folding-default-mouse-keys-function 2031,84535
+(defvar folding-mode-menu 2036,84712
+(defvar folding-mode-menu-name 2039,84793
+(defcustom folding-mode-hook 2047,84981
+(defcustom folding-load-hook 2056,85248
+(defvar folding-mouse-yank-at-point 2067,85524
+(defcustom folding-folding-on-startup 2072,85679
+(defcustom folding-internal-margins 2077,85820
+(defvar folding-mode-string 2098,86565
+(defconst folding-inside-string 2106,86851
+(defcustom folding-inside-mode-name 2110,86983
+(defcustom folding-check-folded-file-function2116,87120
+(defcustom folding-check-allow-folding-function2122,87302
+(defcustom folding-mode-string 2129,87511
+(defcustom folding-mode-hook-no-regexp 2135,87653
+(defcustom folding-behave-table2143,87889
+(defvar folding-mode-marks-alist 2164,88576
+(defvar folding-narrow-placeholder 2183,89265
+(defvar folding-bottom-mark 2187,89385
+(defvar folding-bottom-regexp 2191,89470
+(defvar folding-regexp 2194,89557
+(defvar folding-secondary-top-mark 2197,89665
+(defvar folding-top-mark 2200,89783
+(defvar folding-top-regexp 2203,89873
+(defvar folded-file 2208,90021
+(defvar folding-calling-original 2212,90145
+(defvar folding-narrow-overlays 2215,90247
+(defcustom folding-allow-overlays 2219,90380
+(defun folding-easy-menu-define 2236,91049
+(defun folding-install 2281,92857
+(defsubst folding-get-mode-marks 2334,94437
+(defun folding-region-has-folding-marks-p 2348,94901
+(defun folding-mark-look-at 2360,95360
+(defsubst folding-mark-look-at-top-mark-p 2448,97781
+(defsubst folding-mark-look-at-bottom-mark-p 2454,97989
+(defun folding-act 2460,98202
+(defun folding-region-open-close 2472,98579
+(defun fold-marks-kill 2500,99476
+(defun folding-hide-current-subtree 2523,100135
+(defun folding-show-current-subtree 2530,100371
+(defun folding-display-name 2557,101114
+(defun folding-event-posn 2583,101819
+(defmacro folding-mouse-yank-at-p 2629,103368
+(defun folding-mouse-point 2638,103632
+(defun folding-is-hooked 2651,104032
+(defun folding-uninstall-hooks 2657,104231
+(defun folding-install-hooks 2664,104448
+(defun folding-keep-hooked 2672,104697
+(defun folding-mouse-call-original 2685,105048
+(defun folding-mouse-context-sensitive 2776,108183
+(defun folding-mouse-move 2824,109635
+(defun folding-mouse-pick-move 2846,110279
+(defun folding-set-mode-line 2874,111113
+(defun folding-clear-stack 2890,111701
+(defun folding-check-if-folding-allowed 2902,112110
+(defun folding-mode-find-file 2928,113278
+(defun folding-mode-add-find-file-hook 2958,114536
+(defun folding-mode-write-file 2983,115374
+(defun folding-check-folded 3004,116243
+(defun folding-set-local-variables 3024,116899
+(defun turn-off-folding-mode 3049,117776
+(defun turn-on-folding-mode 3054,117866
+(defun folding-mode 3059,117954
+(defun folding-set-marks 3272,126951
+(defun folding-next-visible-heading 3320,128526
+(defun folding-previous-visible-heading 3332,129028
+(defun folding-find-folding-mark 3340,129263
+(defun folding-pick-move 3399,130993
+(defun folding-forward-char 3429,131969
+(defun folding-backward-char 3467,133317
+(defun folding-end-of-line 3503,134688
+(defun folding-skip-ellipsis-backward 3522,135420
+(defun folding-shift-in 3551,136246
+(defun folding-shift-out 3585,137652
+(defun folding-show-current-entry 3618,138872
+(defun folding-toggle-enter-exit 3664,140688
+(defun folding-toggle-show-hide 3674,141020
+(defun folding-hide-current-entry 3684,141389
+(defun folding-show-all 3705,142140
+(defun folding-goto-line 3714,142303
+(defun folding-skip-folds 3735,142807
+(defun folding-fold-region 3855,147967
+(defun folding-tidy-inside 3907,149719
+(defun folding-whole-buffer 3987,152417
+(defun folding-open-buffer 4028,153738
+(defun folding-convert-buffer-for-printing 4046,154251
+(defun folding-add-to-marks-list 4199,159786
+(defun folding-subst-regions 4419,170889
+(defun folding-narrow-to-region 4489,173929
+(defun folding-end-mode-quickly 4552,176308
+(defun folding-eval-current-buffer-open-folds 4574,177147
+(defcustom folding-isearch-install 4624,178962
+(defvar folding-isearch-stack 4629,179095
+(defvar folding-isearch-normal-cmds4636,179261
+(defvar folding-isearch-edit-enter-cmds4668,180152
+(defvar folding-isearch-edit-exit-cmds4678,180446
+(defvar folding-isearch-mode-map 4687,180720
+(defun folding-isearch-hook-function 4697,181054
+(defun folding-isearch-end-hook-function 4747,182789
+(defun folding-isearch-general 4777,183827
+(defvar folding-isearch-current-buffer 4811,184842
+(defun folding-isearch-edit-string 4816,184995
+(defun folding-isearch-ring-advance 4821,185161
+(defun folding-isearch-ring-retreat 4826,185330
+(defun folding-isearch-complete 4831,185499
+(defun folding-isearch-start-edit 4841,185782
+(defun folding-isearch-forward-exit-minibuffer 4856,186258
+(defun folding-isearch-reverse-exit-minibuffer 4865,186571
+(defun folding-isearch-nonincremental-exit-minibuffer 4874,186884
+(defun folding-goto-char 4900,187704
+(defun folding-point-folded-p 4916,188323
+(defvar folding-comment-folding-table4937,188856
+(defun folding-insert-advertise-folding-mode 4954,189261
+(defun folding-uncomment-mode-generic 4980,190054
+(defun folding-comment-mode-generic 4990,190359
+(defun folding-uncomment-c-mode 4997,190586
+(defun folding-comment-c-mode 5002,190753
+(defun folding-comment-fold 5010,190992
+(defun folding-convert-to-major-folds 5128,194098
+(defun folding-all-comment-blocks-in-region 5202,196009
+(defun folding-use-overlays-p 5302,198063
+(defun folding-flag-region 5313,198416
+(defun folding-make-overlay-hidden 5330,198974
+(defun folding-narrow-aux 5337,199198
+
+gforth.el,4171
+(defun forth-emacs-older 64,2522
+(defun forth-require 82,3170
+(defun forth-idle-function 146,5185
+(defvar forth-idle-function-timer 154,5510
+(defun forth-install-motion-hook 157,5623
+(defvar forth-was-point 165,5979
+(defun forth-check-motion 167,6009
+(defvar forth-disable-parser 178,6412
+(defvar forth-jit-parser 186,6735
+(defvar forth-words 193,6993
+(defvar forth-use-objects 316,12920
+(defvar forth-objects-words318,13031
+(defvar forth-use-oof 350,14679
+(defvar forth-oof-words 352,14782
+(defvar forth-local-words 371,15680
+(defvar forth-custom-words 376,15922
+(defvar forth-hilight-level 380,16039
+(defvar forth-compiled-words 382,16109
+(defvar forth-indent-words 384,16188
+(defvar forth-local-indent-words 440,18714
+(defvar forth-custom-indent-words 446,19004
+(defvar forth-indent-level 450,19135
+(defvar forth-minor-indent-level 452,19203
+(defvar forth-compiled-indent-words 454,19283
+(defun forth-filter 461,19509
+(defun forth-words-filter 473,19906
+(defun forth-compile-words-mapper 482,20226
+(defun forth-compile-wordlist 499,20868
+(defun forth-compile-words 516,21312
+(defun forth-hack-local-variables 527,21797
+(defun forth-customize-words 536,22205
+(defun forth-previous-start 551,22846
+(defun forth-next-end 565,23418
+(defun forth-next-whitespace 575,23760
+(defun forth-previous-word 580,23889
+(defun forth-delete-properties 587,24091
+(defun forth-get-regexp-branch 594,24398
+(defun forth-next-known-forth-word 602,24678
+(defun forth-set-word-properties 619,25343
+(defun forth-update-properties 659,26934
+(defun forth-change-function 712,29307
+(defun forth-fontification-function 719,29541
+(defvar forth-defining-words 737,30152
+(defvar forth-defining-words-regexp 744,30434
+(defun forth-next-definition-starter 747,30542
+(defun forth-create-index 759,30923
+(defun forth-first-word-on-line-p 784,31804
+(defun forth-next-known-indent-word 794,32202
+(defun forth-convert-to-column 821,33265
+(defun forth-get-column-incr 833,33882
+(defun forth-get-anchor-column 857,34959
+(defun forth-indent-line 866,35230
+(defun forth-current-column 872,35482
+(defun forth-current-indentation 874,35573
+(defun forth-indent-to 878,35739
+(defun forth-delete-indentation 886,35961
+(defun forth-indent-command 892,36123
+(defun forth-remove-trailing 897,36243
+(defun forth-newline-remove-trailing 903,36459
+(defun forth-reindent-then-newline-and-indent 913,36809
+(defconst forth-c/l 923,37017
+(defconst forth-l/b 924,37079
+(defun forth-check-block-line 928,37241
+(defun forth-convert-from-block 941,37677
+(defun forth-pad-block-line 958,38252
+(defun forth-convert-tabs-in-line 970,38671
+(defun forth-delete-newline 980,39092
+(defun forth-convert-to-block 984,39205
+(defun forth-detect-block-file-p 1016,40415
+(defconst forth-block-format-description1027,40798
+(defvar forth-overlay-arrow-string 1038,41157
+(defvar forth-block-base 1039,41198
+(defvar forth-show-screen 1040,41264
+(defvar forth-warn-long-lines 1042,41365
+(defvar forth-screen-marker 1045,41474
+(defvar forth-screen-number-string 1046,41507
+(defun forth-update-show-screen 1048,41548
+(defun forth-update-warn-long-lines 1067,42375
+(defvar forth-mode-abbrev-table 1080,42791
+(define-abbrev-table 'forth-mode-abbrev-table forth-mode-abbrev-table1083,42876
+(defvar forth-mode-map 1085,42927
+(define-key forth-mode-map 1092,43109
+(define-key forth-mode-map 1093,43162
+(define-key forth-mode-map 1094,43220
+(define-key forth-mode-map 1095,43272
+(define-key forth-mode-map 1096,43320
+(define-key forth-mode-map 1097,43375
+(define-key forth-mode-map 1098,43450
+(define-key forth-mode-map 1099,43507
+(defun forth-find-tag 1122,44225
+(defvar forth-mode-syntax-table 1130,44525
+(defun forth-mode-variables 1149,45193
+(defun forth-mode 1193,47063
+(define-derived-mode forth-block-mode 1293,51093
+(defun forth-fill-paragraph 1329,52747
+(defun forth-comment-indent 1352,53633
+(defun forth-remove-tracers 1365,53866
+(define-key forth-mode-map 1370,54042
+(define-key forth-mode-map 1371,54090
+(defvar forth-compile-command 1374,54161
+(defun forth-split 1377,54256
+(defun forth-split-1 1381,54324
+(defun forth-compile 1392,54614
+
+htmlize.el,2565
+(defconst htmlize-version 96,4099
+(defgroup htmlize 115,4839
+(defcustom htmlize-head-tags 119,4927
+(defcustom htmlize-output-type 124,5065
+(defcustom htmlize-generate-hyperlinks 139,5738
+(defcustom htmlize-hyperlink-style 147,6082
+(defcustom htmlize-replace-form-feeds 162,6408
+(defcustom htmlize-html-charset 175,6937
+(defcustom htmlize-convert-nonascii-to-entities 200,8027
+(defcustom htmlize-css-name-prefix 235,9774
+(defcustom htmlize-use-rgb-txt 244,10156
+(defcustom htmlize-html-major-mode 262,10917
+(defvar htmlize-before-hook 270,11229
+(defvar htmlize-after-hook 275,11384
+(defvar htmlize-file-hook 281,11606
+(defconst htmlize-running-xemacs 288,11885
+(defvar htmlize-basic-character-table376,15484
+(defvar htmlize-extended-character-cache 412,16985
+(defun htmlize-protect-string 414,17056
+(defconst htmlize-ellipsis 451,18511
+(defun htmlize-buffer-substring-no-invisible 454,18631
+(defun htmlize-trim-ellipsis 509,20884
+(defconst htmlize-tab-spaces518,21245
+(defun htmlize-untabify 526,21514
+(defun htmlize-despam-address 562,22926
+(defun htmlize-make-hyperlinks 571,23255
+(defun htmlize-defang-local-variables 604,24465
+(defvar htmlize-x-library-search-path623,25167
+(defun htmlize-get-color-rgb-hash 645,25773
+(defvar htmlize-color-rgb-hash 684,27127
+(defun htmlize-face-specifies-property 688,27210
+(defun htmlize-face-color-internal 699,27772
+(defun htmlize-face-foreground 732,29176
+(defun htmlize-face-background 743,29560
+(defun htmlize-color-to-rgb 757,30048
+(defstruct htmlize-fstruct802,31841
+(defun htmlize-face-emacs21-attr 813,32201
+(defun htmlize-face-to-fstruct 837,33095
+(defun htmlize-attrlist-to-fstruct 913,36482
+(defun htmlize-face-list-p 934,37302
+(defun htmlize-make-face-map 961,38259
+(defun htmlize-unstringify-face 987,39222
+(defun htmlize-faces-in-buffer 993,39390
+(defmacro htmlize-method 1134,45189
+(defun htmlize-method-function 1139,45402
+(defun htmlize-css-doctype 1147,45728
+(defun htmlize-css-specs 1152,45879
+(defun htmlize-css-insert-head 1173,46699
+(defun htmlize-css-insert-text 1206,47955
+(defun htmlize-font-doctype 1221,48504
+(defun htmlize-font-body-tag 1250,49875
+(defun htmlize-font-insert-text 1256,50098
+(defun htmlize-buffer-1 1291,51481
+(defmacro htmlize-with-fontify-message 1410,56260
+(defun htmlize-ensure-fontified 1423,56734
+(defun htmlize-buffer 1453,58003
+(defun htmlize-region 1474,58910
+(defun htmlize-make-file-name 1488,59363
+(defun htmlize-file 1512,60271
+(defun htmlize-many-files 1575,62943
+(defun htmlize-many-files-dired 1609,64257
+
+hungry.el,161
+(defvar hungry-delete-function 43,1535
+(defvar hungry-last-white-char 47,1714
+(defvar hungry-white-space-chars 53,1933
+(defun hungry-electric-delete 78,2620
+
+javascript.el,698
+(defcustom js-indent-level 47,1685
+(defvar javascript-mode-map 52,1769
+(defvar javascript-mode-syntax-table59,1940
+(defun js-re-search-forward-inner 67,2145
+(defun js-re-search-forward 89,2900
+(defun js-re-search-backward-inner 108,3583
+(defun js-re-search-backward 129,4325
+(defun js-indent-line 150,5027
+(defvar js-function-heading-re 195,6801
+(defvar js-keywords-re197,6881
+(defvar js-basic-types-re207,7393
+(defvar js-constants-re212,7556
+(defvar js-font-lock-keywords-1217,7671
+(defvar js-font-lock-keywords-2225,7915
+(defvar js-font-lock-keywords-3231,8140
+(defconst js-font-lock-keywords243,8616
+(defvar js-imenu-generic-expression 251,8820
+(defun javascript-mode 262,9082
+
+js-mode.el,3154
+(defvar js-mode-map 70,2336
+(define-minor-mode js-mode 72,2379
+(define-key js-mode-map 83,2657
+(define-key js-mode-map 84,2711
+(define-key js-mode-map 85,2771
+(define-key js-mode-map 86,2834
+(define-key js-mode-map 87,2891
+(define-key js-mode-map 88,2946
+(define-key js-mode-map 89,3004
+(define-key js-mode-map 90,3071
+(define-key js-mode-map 91,3126
+(define-key js-mode-map 92,3197
+(defun js-symbol-at-point 97,3298
+(defun js-read-symbol 105,3560
+(defvar js-mozilla-connection 122,4129
+(defun js-connect 124,4165
+(defun js-disconnect 132,4470
+(defun js-connection 138,4625
+(defun js-make-net-buffer 143,4740
+(defun js-net-connect 152,5016
+(defun js-net-send 162,5431
+(defun js-net-encode-length 166,5612
+(defun js-net-filter 169,5666
+(defun js-process-available-input 178,5956
+(defun js-net-panic 193,6517
+(defun js-net-have-input-p 205,6855
+(defun js-net-read-length 210,7021
+(defun js-net-read 213,7117
+(defun js-net-sentinel 221,7356
+(defun js-send 227,7586
+(defun js-term-to-string 231,7702
+(defvar js-log-events 244,8084
+(defvar js-log-buffer-name 247,8163
+(defun js-log-event 250,8243
+(defun js-pprint-event 264,8690
+(defun js-events-buffer 271,8884
+(defvar js-continuations 276,8966
+(defvar js-continuation-counter 279,9059
+(defun js-dispatch-event 282,9152
+(defun js-eval 286,9244
+(defun js-buffer-for-eval 298,9731
+(defun js-return 303,9922
+(defvar js-wait-tags 310,10168
+(defun js-eval-wait 312,10194
+(defun js-wait 328,10782
+(defun js-show-result 335,10976
+(defun js-beginning-of-defun 340,11062
+(defconst js-identifier354,11348
+(defun js-hack-defun 358,11459
+(defun js-eval-defun 366,11779
+(defun js-interactive-eval 377,12118
+(defun js-eval-region 386,12398
+(defun js-eval-current-line 392,12656
+(defun js-load-file 397,12849
+(defvar js-find-definition-history-ring 410,13250
+(defun js-push-definition-stack 413,13368
+(defun js-pop-find-definition-stack 418,13567
+(defun js-find-definitions 430,14060
+(defun js-show-definitions 437,14319
+(defun js-goto-definition 444,14581
+(defun js-find-source-buffer 451,14874
+(defun js-display-multiple-definitions 466,15427
+(defun js-quit 487,16323
+(defun js-property-at-point 494,16542
+(defun js-pop-to-definition 498,16655
+(defun js-show-definition-other-window 504,16874
+(defvar js-debugger-level 516,17309
+(define-derived-mode js-debugger-mode 518,17339
+(defun js-debugger-buffer 533,17827
+(defun js-debugger-activate 536,17896
+(defun js-debugger-setup 544,18174
+(defun js-insert-backtrace 563,18909
+(defun js-insert-frame 566,18987
+(defun js-debugger-show-source 579,19358
+(defun js-debugger-quit 587,19689
+(defun js-debugger-toggle-locals 597,19982
+(defun js-insert-line-with-props 622,20887
+(defun js-debugger-inspect-variable 629,21093
+(defun js-toggle-break-on-throw 636,21345
+(defun js-inspect 644,21525
+(define-derived-mode js-inspector-mode 649,21730
+(defun js-inspector-buffer 664,22245
+(defun js-open-inspector 673,22550
+(defun js-inspect-part 688,23051
+(defun js-inspector-next 694,23260
+(defun js-inspector-last 706,23567
+(defun js-inspector-apply-part 718,23883
+(defun js-quit-inspector 728,24349
+
+keywiz.el,744
+(defgroup keywiz 80,2496
+(defface keywiz-wrong-face87,2646
+(defface keywiz-right-face92,2749
+(defface keywiz-command-face97,2859
+(defface keywiz-heading-face105,3023
+(defcustom keywiz-brief-flag 112,3157
+(defvar keywiz-cached-commands 118,3325
+(defconst keywiz-right-phrases 121,3402
+(defconst keywiz-wrong-phrases 123,3527
+(defvar keywiz-temp-dir 126,3646
+(defvar keywiz-score-file130,3757
+(defconst keywiz-time-limit 137,3950
+(defvar keywiz-not-key-regexp139,3984
+(defvar keywiz-global-map 145,4175
+(defvar keywiz-local-map 146,4206
+(defun keywiz-key-press-event-p 167,4717
+(defun keywiz-insert-with-face 178,5032
+(defalias 'keywiz-float-timekeywiz-float-time188,5262
+(defun keywiz-random 195,5423
+(defun keywiz 199,5519
+
+longlines.el,1446
+(defgroup longlines 75,2613
+(defcustom longlines-auto-wrap 79,2711
+(defcustom longlines-wrap-follows-window-size 87,3018
+(defcustom longlines-show-hard-newlines 95,3343
+(defface longlines-visible-face103,3652
+(defcustom longlines-show-effect 107,3781
+(defvar longlines-wrap-beg 115,4031
+(defvar longlines-wrap-end 116,4063
+(defvar longlines-wrap-point 117,4095
+(defvar longlines-showing 118,4129
+(define-minor-mode longlines-mode128,4383
+(defun longlines-mode-off 194,7277
+(defun longlines-show-hard-newlines 202,7503
+(defun longlines-show-region 219,8205
+(defun longlines-unshow-hard-newlines 236,8790
+(defun longlines-wrap-region 250,9121
+(defun longlines-wrap-line 265,9700
+(defun longlines-set-breakpoint 296,10853
+(defun longlines-find-break-backward 308,11358
+(defun longlines-find-break-forward 323,12016
+(defun longlines-merge-lines-p 335,12493
+(defun longlines-decode-region 351,13118
+(defun longlines-decode-buffer 363,13561
+(defun longlines-encode-region 367,13705
+(defun longlines-auto-wrap 383,14275
+(defun longlines-after-change-function 402,15076
+(defun longlines-post-command-function 412,15500
+(defun longlines-window-change-function 422,15937
+(defadvice newline 433,16368
+(defadvice kill-region 441,16704
+(defadvice copy-region-as-kill 446,16921
+(defadvice yank 458,17353
+(defadvice yank-pop 465,17616
+(defun longlines-before-revert-hook 474,17906
+(defun longlines-after-revert-hook 478,18035
+
+markdown-mode.el,2282
+(defvar markdown-enable-itex 149,6782
+(defconst markdown-mode-version 155,6919
+(defvar markdown-mode-hook 158,7039
+(defgroup markdown 163,7154
+(defcustom markdown-command 168,7240
+(defcustom markdown-hr-length 173,7345
+(defcustom markdown-bold-underscore 178,7446
+(defcustom markdown-italic-underscore 183,7583
+(defface markdown-font-lock-bold-face 200,8152
+(defface markdown-font-lock-italic-face 202,8285
+(defface markdown-font-lock-inline-code-face 204,8422
+(defvar markdown-font-lock-italic-face 225,9569
+(defvar markdown-font-lock-bold-face 227,9675
+(defvar markdown-font-lock-header-face 229,9774
+(defvar markdown-font-lock-inline-code-face 231,9880
+(defvar markdown-font-lock-list-face 233,10000
+(defvar markdown-font-lock-blockquote-face 235,10105
+(defvar markdown-font-lock-link-face 237,10239
+(defvar markdown-font-lock-reference-face 239,10339
+(defvar markdown-font-lock-url-face 241,10454
+(defvar markdown-font-lock-math-face 243,10551
+(defconst regex-link-inline 250,10754
+(defconst regex-link-reference 252,10891
+(defconst regex-reference-definition254,11017
+(defconst markdown-regex-latex-expression259,11189
+(defconst markdown-regex-latex-display263,11389
+(defconst markdown-mode-font-lock-keywords-basic270,11613
+(defconst markdown-mode-font-lock-keywords-itex348,14923
+(defvar markdown-mode-font-lock-keywords371,15797
+(defvar markdown-mode-syntax-table380,16093
+(defun wrap-or-insert 389,16398
+(defun markdown-insert-hr 400,16732
+(defun markdown-insert-bold 409,17057
+(defun markdown-insert-italic 417,17284
+(defun markdown-insert-code 425,17515
+(defun markdown-insert-link 432,17696
+(defun markdown-insert-image 440,17925
+(defun markdown-insert-header-1 448,18177
+(defun markdown-insert-header-2 453,18288
+(defun markdown-insert-header-3 458,18399
+(defun markdown-insert-header-4 463,18510
+(defun markdown-insert-header-5 468,18621
+(defun markdown-insert-header 473,18732
+(defun markdown-insert-title 487,19250
+(defun markdown-insert-section 505,19844
+(defun markdown-insert-blockquote 523,20443
+(defvar markdown-mode-map534,20823
+(defun markdown 563,22409
+(defun markdown-preview 572,22868
+(defun markdown-show-version 581,23129
+(defun blockquote-region 586,23288
+(define-derived-mode markdown-mode 595,23607
+
+mic-paren.el,2418
+(defvar mic-paren-version 307,15270
+(defgroup mic-paren-matching 330,16018
+(defcustom paren-priority 335,16158
+(defcustom paren-overlay-priority 352,16994
+(defcustom paren-sexp-mode 363,17425
+(defcustom paren-highlight-at-point 379,18140
+(defcustom paren-highlight-offscreen 388,18469
+(defcustom paren-display-message 402,18928
+(defcustom paren-message-linefeed-display 413,19426
+(defcustom paren-message-show-linenumber 429,20151
+(defcustom paren-message-no-match 445,21000
+(defcustom paren-message-truncate-lines 452,21224
+(defcustom paren-ding-unmatched 459,21441
+(defcustom paren-delay 467,21700
+(defcustom paren-dont-touch-blink 494,22761
+(defcustom paren-dont-load-timer 503,23049
+(defcustom paren-bind-modified-sexp-functions 515,23538
+(defface paren-face-match535,24500
+(defface paren-face-mismatch542,24702
+(defface paren-face-no-match549,24925
+(defcustom paren-match-face 557,25148
+(defcustom paren-mismatch-face 563,25295
+(defcustom paren-no-match-face 569,25454
+(defvar paren-match-quoted-paren 581,25859
+(defvar paren-match-paired-delimiter 608,27279
+(defvar paren-open-paren-context-backward 623,27925
+(defconst mic-paren-original-keybinding-of-sexp-functions656,29401
+(defun mic-paren-nolog-message 701,31006
+(defun paren-activate 728,31867
+(defun paren-deactivate 810,35116
+(defun paren-toggle-matching-paired-delimiter 835,36054
+(defun paren-toggle-matching-quoted-paren 852,36815
+(defun paren-toggle-open-paren-context 888,38573
+(defun paren-forward-sexp 899,39022
+(defun paren-backward-sexp 927,40140
+(defvar mic-paren-backw-overlay 938,40489
+(defvar mic-paren-point-overlay 942,40712
+(defvar mic-paren-forw-overlay 946,40866
+(defvar mic-paren-idle-timer 950,41086
+(defvar mic-paren-previous-location 954,41201
+(defun mic-paren-command-hook 964,41462
+(defun mic-paren-command-idle-hook 975,41913
+(defmacro mic-paren-overlay-set 985,42265
+(defun mic-paren-minibuffer-setup-hook 992,42498
+(defun mic-paren-minibuffer-exit-hook 995,42585
+(defun mic-paren-highlight 999,42673
+(defun mic-paren-sexp-mode-p 1282,56460
+(defun mic-paren-horizontal-pos-visible-p 1291,56808
+(defun mic-paren-get-matching-open-text 1313,57714
+(defun mic-paren-get-matching-close-text 1359,59886
+(defun mic-paren-is-new-location 1386,60984
+(defun mic-paren-is-following-char-quoted 1397,61419
+(defun mic-paren-uncharquote 1408,61803
+(defun mic-paren-recharquote 1424,62402
+
+paredit.el,3164
+(defconst paredit-version 98,4867
+(defvar paredit-mode-map 102,4926
+(define-minor-mode paredit-mode105,5013
+(defun enable-paredit-mode 122,5690
+(defun disable-paredit-mode 129,5851
+(defvar paredit-commands 142,6210
+(defun paredit-define-keys 360,14916
+(defun paredit-function-documentation 366,15110
+(defun paredit-annotate-mode-with-examples 373,15380
+(defun paredit-annotate-functions-with-examples 400,16589
+(defun paredit-insert-html-examples 417,17282
+(define-paredit-pair ?\(514,21535
+(define-paredit-pair ?\[ 515,21579
+(define-paredit-pair ?\{ 516,21619
+(define-paredit-pair ?\< 517,21657
+(defun paredit-move-past-close 519,21698
+(defun paredit-move-past-close-and-newline 527,21962
+(defun paredit-find-comment-on-line 546,22685
+(defun paredit-insert-pair 568,23708
+(defun paredit-region-safe-for-insert-p 588,24544
+(defun paredit-space-for-delimiter-p 605,25345
+(defun paredit-move-past-close-and-reindent 618,25972
+(defun paredit-delete-leading-whitespace 644,27318
+(defun paredit-blink-paren-match 655,27801
+(defun paredit-doublequote 666,28161
+(defun paredit-meta-doublequote 691,29344
+(defun paredit-splice-doublequote 707,29970
+(defun paredit-forward-for-quote 718,30329
+(defun paredit-backslash 751,31813
+(defun paredit-escape 774,32840
+(defun paredit-newline 786,33416
+(defun paredit-semicolon 806,34133
+(defun paredit-comment-dwim 831,35295
+(defun paredit-comment-on-line-p 860,36730
+(defun paredit-insert-comment 876,37355
+(defun paredit-forward-delete 915,38989
+(defun paredit-forward-delete-in-string 953,40681
+(defun paredit-backward-delete 976,41862
+(defun paredit-backward-delete-in-string 1009,43376
+(defun paredit-kill 1034,44525
+(defun paredit-kill-line-in-string 1054,45326
+(defun paredit-kill-sexps-on-line 1071,45911
+(defun paredit-forward-sexps-to-kill 1095,47189
+(defun paredit-kill-sexps-on-whole-line 1118,47993
+(defun paredit-forward-kill-word 1143,49324
+(defun paredit-backward-kill-word 1176,50962
+(defun paredit-kill-word-state 1201,52075
+(defun paredit-kill-word-hack-comments 1209,52347
+(defun paredit-forward 1221,52674
+(defun paredit-backward 1232,53143
+(defun backward-down-list 1246,53648
+(defun paredit-recentre-on-sexp 1255,53973
+(defun paredit-wrap-sexp 1271,54567
+(defun paredit-splice-sexp 1291,55490
+(defun paredit-kill-surrounding-sexps-for-splice 1315,56690
+(defun paredit-splice-sexp-killing-backward 1346,58115
+(defun paredit-splice-sexp-killing-forward 1355,58513
+(defun paredit-raise-sexp 1364,58914
+(defun paredit-forward-slurp-sexp 1395,60498
+(defun paredit-forward-barf-sexp 1413,61374
+(defun paredit-backward-slurp-sexp 1435,62441
+(defun paredit-backward-barf-sexp 1458,63191
+(defun paredit-split-sexp 1493,64344
+(defun paredit-join-sexps 1513,65138
+(defun paredit-in-string-escape-p 1548,66733
+(defun paredit-in-char-p 1560,67125
+(defun paredit-forward-and-indent 1573,67751
+(defun paredit-skip-whitespace 1582,68226
+(defun paredit-region-active-p 1590,68650
+(defun paredit-current-parse-state 1602,69129
+(defun paredit-in-string-p 1611,69490
+(defun paredit-string-start+end-points 1619,69835
+(defun paredit-in-comment-p 1633,70455
+
+parenface.el,95
+(defvar paren-face 10,355
+(defface paren-face12,388
+(defmacro paren-face-add-support 18,515
+
+password.el,213
+(defcustom password-cache 60,1715
+(defcustom password-cache-expiry 65,1813
+(defvar password-data 72,2083
+(defun password-read 74,2125
+(defun password-cache-remove 163,5294
+(defun password-cache-add 175,5804
+
+php-mode.el,1658
+(defconst php-version 11,286
+(defgroup php 103,3546
+(defcustom php-speedbar-config 108,3640
+(defcustom php-mode-speedbar-open 114,3868
+(defcustom php-manual-url 120,4053
+(defcustom php-search-url 126,4234
+(defcustom php-completion-file 131,4370
+(defcustom php-manual-path 136,4505
+(defcustom php-file-patterns 142,4639
+(defcustom php-mode-user-hook 147,4848
+(defcustom php-mode-force-pear 152,4970
+(defvar php-completion-table 158,5180
+(defconst xemacsp 162,5329
+(define-derived-mode php-mode 166,5439
+(define-key php-mode-map 254,9064
+(define-key php-mode-map 255,9122
+(define-key php-mode-map 259,9251
+(define-key php-mode-map261,9364
+(define-key php-mode-map264,9462
+(defun php-complete-function 269,9626
+(defun php-completion-table 301,10973
+(defun php-build-table-from-file 328,12137
+(defun php-build-table-from-path 342,12559
+(defun php-get-pattern 359,13114
+(defun php-show-arglist 379,13711
+(defun php-search-documentation 397,14333
+(defun php-browse-manual 403,14537
+(define-key php-mode-map409,14661
+(define-key php-mode-map414,14748
+(define-key php-mode-map419,14834
+(define-key php-mode-map424,14914
+(defconst php-constants428,14978
+(defconst php-keywords782,36205
+(defconst php-identifier795,36802
+(defconst php-types800,36937
+(defconst php-superglobals807,37137
+(defconst php-font-lock-keywords-1814,37349
+(defconst php-font-lock-keywords-2849,38432
+(defconst php-font-lock-keywords-3886,39761
+(defconst php-font-lock-syntactic-keywords933,41636
+(defvar php-imenu-generic-expression956,42655
+(defconst php-conditional-key 967,42966
+(defconst php-class-kwds 973,43224
+(defconst php-class-key975,43271
+
+quack.el,13318
+(defconst quack-copyright 3,71
+(defconst quack-copyright-2 4,144
+(defconst quack-version 8,357
+(defconst quack-author-name 9,394
+(defconst quack-author-email 10,443
+(defconst quack-web-page 11,496
+(defconst quack-legal-notice13,563
+(defconst quack-cvsid 24,1261
+(defgroup quack 472,23682
+(defcustom quack-dir 478,23857
+(defcustom quack-scheme-mode-keymap-prefix 483,23998
+(defcustom quack-remap-find-file-bindings-p 495,24565
+(defcustom quack-global-menu-p 501,24786
+(defcustom quack-tabs-are-evil-p 505,24916
+(defcustom quack-browse-url-browser-function 510,25057
+(defcustom quack-manuals 520,25491
+(defcustom quack-local-keywords-for-remote-manuals-p 657,30817
+(defcustom quack-srfi-master-base-url 673,31677
+(defcustom quack-pltcollect-dirs680,31966
+(defcustom quack-fontify-style 702,32825
+(defcustom quack-pltish-fontify-definition-names-p 716,33491
+(defcustom quack-pltish-fontify-keywords-p 725,33802
+(defcustom quack-pltish-keywords-to-fontify734,34087
+(defcustom quack-emacsish-keywords-to-fontify774,36397
+(defcustom quack-fontify-threesemi-p 790,37232
+(defcustom quack-pretty-lambda-p 797,37461
+(defcustom quack-programs812,38103
+(defcustom quack-default-program 824,38639
+(defcustom quack-run-scheme-always-prompts-p 829,38783
+(defcustom quack-run-scheme-prompt-defaults-to-last-p 838,39106
+(defcustom quack-remember-new-programs-p 843,39274
+(defcustom quack-switch-to-scheme-method 848,39412
+(defcustom quack-warp-pointer-to-frame-p 861,40028
+(defcustom quack-newline-behavior 869,40319
+(defcustom quack-smart-open-paren-p 880,40850
+(defcustom quack-options-persist-p 890,41329
+(defcustom quack-quiet-warnings-p 900,41785
+(defconst quack-pltish-comment-face 905,41926
+(defface  quack-pltish-comment-face906,41990
+(defconst quack-pltish-selfeval-face 913,42292
+(defface  quack-pltish-selfeval-face914,42358
+(defconst quack-pltish-paren-face 921,42663
+(defface  quack-pltish-paren-face922,42723
+(defconst quack-banner-face 930,43073
+(defface  quack-banner-face931,43121
+(defconst quack-pltish-defn-face 938,43334
+(defface  quack-pltish-defn-face939,43392
+(defconst quack-pltish-class-defn-face 948,43773
+(defface  quack-pltish-class-defn-face949,43843
+(defconst quack-pltish-module-defn-face 960,44275
+(defface  quack-pltish-module-defn-face961,44347
+(defconst quack-pltish-keyword-face 972,44781
+(defface  quack-pltish-keyword-face973,44845
+(defconst quack-threesemi-semi-face 980,45039
+(defface  quack-threesemi-semi-face981,45103
+(defconst quack-threesemi-text-face 990,45440
+(defface  quack-threesemi-text-face991,45504
+(defconst quack-threesemi-h1-face 1000,45834
+(defface  quack-threesemi-h1-face1001,45894
+(defconst quack-threesemi-h2-face 1006,46055
+(defface  quack-threesemi-h2-face1007,46115
+(defconst quack-threesemi-h3-face 1012,46276
+(defface  quack-threesemi-h3-face1013,46336
+(defconst quack-pltfile-prologue-face 1018,46472
+(defface  quack-pltfile-prologue-face1019,46540
+(defconst quack-pltfile-dir-face 1026,46828
+(defface  quack-pltfile-dir-face1027,46886
+(defconst quack-pltfile-file-face 1036,47368
+(defface  quack-pltfile-file-face1037,47428
+(defconst quack-about-title-face 1046,47906
+(defface  quack-about-title-face1047,47964
+(defconst quack-about-face 1059,48435
+(defface  quack-about-face1060,48481
+(defconst quack-smallprint-face 1065,48605
+(defface  quack-smallprint-face1066,48661
+(defmacro quack-when-xemacs 1104,50225
+(defmacro quack-when-gnuemacs 1107,50314
+(defmacro quack-define-key-after 1110,50407
+(defmacro quack-delete-horizontal-space 1115,50622
+(defmacro quack-match-string-no-properties 1120,50806
+(defmacro quack-menufilter-return 1123,50939
+(defmacro quack-propertize 1135,51617
+(defmacro quack-puthash 1157,52281
+(defmacro quack-gethash 1161,52420
+(defun quack-fake-make-hash-table 1165,52567
+(defun quack-fake-puthash 1170,52777
+(defun quack-fake-gethash 1176,52986
+(defmacro quack-make-face-ovlext 1185,53295
+(defmacro quack-make-hiding-ovlext 1190,53488
+(defmacro quack-activity 1197,53730
+(defun quack-internal-error 1204,53985
+(defun quack-warning 1209,54162
+(defun quack-re-alt 1217,54351
+(defun quack-re-optional 1220,54448
+(defun quack-delete-file-if-can 1231,54703
+(defun quack-expand-file-name 1234,54798
+(defun quack-kill-current-buffer 1241,55109
+(defun quack-line-at-point 1245,55196
+(defun quack-looking-at-backward 1251,55366
+(defun quack-looking-at-close-paren-backward 1260,55663
+(defun quack-looking-at-open-paren-backward 1264,55784
+(defun quack-make-directory 1268,55904
+(defun quack-make-directory-for-file 1273,56043
+(defun quack-propertize-bold 1277,56174
+(defun quack-propertize-face 1280,56248
+(defun quack-propertize-italic 1283,56326
+(defun quack-sort-string-list-copy 1286,56404
+(defun quack-uncomment-region 1289,56485
+(defun quack-without-side-whitespace 1294,56629
+(defconst quack-backward-sexp-re1307,57060
+(defun quack-backward-sexp 1317,57404
+(defun quack-parent-sexp-search 1339,58334
+(defun quack-not-symbol-char-at-point-p 1405,61968
+(defun quack-quote-url-substring 1433,62803
+(defun quack-file-url 1453,63643
+(defun quack-build-url 1460,63879
+(defun quack-browse-url 1475,64287
+(defun quack-browse-quack-web-page 1482,64552
+(defun quack-w3m-browse-url-other-window 1486,64644
+(defconst quack-web-get-log-buffer-name 1496,65066
+(defun quack-web-get-to-file 1498,65126
+(defun quack-web-get-to-file-via-wget 1513,65857
+(defun quack-strip-limited-html-tags 1546,67161
+(defun quack-temp-dir 1564,67787
+(defun quack-make-temp-file 1571,67964
+(defun quack-about 1594,68898
+(defvar quack-pltcollects-alist-cache 1662,71258
+(defun quack-invalidate-pltcollects-caches 1664,71302
+(defun quack-pltcollects-alist 1668,71429
+(defun quack-dir-for-pltcollect 1690,72490
+(defun quack-dired-pltcollect 1693,72578
+(defun quack-shorter-file-relative-name 1709,73121
+(defun quack-find-file 1719,73526
+(defun quack-find-file-default 1741,74424
+(defconst quack-pltrequire-at-point-data-re1793,76012
+(defconst quack-pltrequire-at-point-data-1-re1799,76222
+(defconst quack-pltrequire-at-point-data-2-re1803,76331
+(defun quack-pltrequire-at-point-data-1 1808,76482
+(defun quack-pltrequire-at-point-data-2 1822,77010
+(defun quack-pltrequire-at-point-filename 1842,77858
+(defun quack-newline 1875,79197
+(defun quack-insert-closing 1898,80006
+(defun quack-insert-closing-paren 1913,80603
+(defun quack-insert-closing-bracket 1917,80722
+(defun quack-insert-opening 1923,80869
+(defun quack-insert-opening-paren 1927,81042
+(defun quack-insert-opening-bracket 1931,81153
+(defconst quack-toggle-lambda-re-11937,81305
+(defconst quack-toggle-lambda-re-21945,81533
+(defun quack-toggle-lambda 1977,82643
+(defun quack-delete-all-in-buffer 2060,86196
+(defun quack-tidy-buffer 2068,86509
+(defconst quack-srfi-subindex-kinds 2150,89795
+(defvar quack-srfi-completes-cache 2155,90077
+(defvar quack-srfi-menu-cache 2156,90122
+(defun quack-srfi-completes 2158,90168
+(defun quack-srfi-menu 2163,90320
+(defun quack-srfi-master-url 2168,90496
+(defun quack-srfi-subindex-master-url 2171,90586
+(defun quack-srfi-dir 2174,90702
+(defun quack-srfi-subindex-file 2177,90792
+(defun quack-srfi-subindex-basename 2180,90907
+(defun quack-invalidate-srfi-index-caches 2183,90984
+(defun quack-update-srfi-index 2187,91121
+(defun quack-download-srfi-subindex-files 2193,91257
+(defun quack-download-srfi-subindex-files-if-missing 2203,91668
+(defun quack-process-srfi-subindex-files 2214,92108
+(defun quack-parse-srfi-subindex-file 2290,95397
+(defconst quack-parse-srfi-index-buffer-re-12306,96014
+(defun quack-parse-srfi-subindex-buffer 2317,96358
+(defun quack-srfi-num-url 2338,97206
+(defconst quack-srfi-num-at-point-re-12342,97360
+(defconst quack-srfi-num-at-point-re-22345,97430
+(defun quack-srfi-num-at-point 2349,97592
+(defun quack-view-srfi 2364,98360
+(defun quack-srfi-num-prompt 2371,98611
+(defmacro quack-kw-get-syntax 2393,99434
+(defmacro quack-kw-get-file 2394,99484
+(defmacro quack-kw-get-fragment 2395,99534
+(defmacro quack-kw-set-syntax 2397,99585
+(defmacro quack-kw-set-file 2398,99640
+(defmacro quack-kw-set-fragment 2399,99695
+(defmacro quack-doc-get-type 2406,99909
+(defmacro quack-doc-get-sym 2407,99964
+(defmacro quack-doc-get-title 2408,100019
+(defmacro quack-doc-get-loc 2409,100074
+(defmacro quack-doc-get-kw-p 2410,100129
+(defmacro quack-doc-get-start-url 2411,100184
+(defmacro quack-doc-get-kw-base-url 2412,100239
+(defmacro quack-doc-get-kw-file 2413,100294
+(defmacro quack-doc-get-kw-hashtable 2414,100349
+(defmacro quack-doc-set-type 2416,100405
+(defmacro quack-doc-set-sym 2417,100465
+(defmacro quack-doc-set-title 2418,100525
+(defmacro quack-doc-set-loc 2419,100585
+(defmacro quack-doc-set-kw-p 2420,100645
+(defmacro quack-doc-set-start-url 2421,100705
+(defmacro quack-doc-set-kw-base-url 2422,100765
+(defmacro quack-doc-set-kw-file 2423,100825
+(defmacro quack-doc-set-kw-hashtable 2424,100885
+(defun quack-manual-to-doc 2426,100946
+(defun quack-doc-keyword-lookup 2530,106200
+(defun quack-doc-import-keywords 2540,106576
+(defun quack-doc-import-plt-manual-keywords 2545,106734
+(defun quack-read-sexp-file 2617,110450
+(defvar quack-docs 2630,110839
+(defun quack-docs 2632,110869
+(defun quack-docs-build 2637,110962
+(defun quack-docs-manual-lookup 2643,111146
+(defun quack-docs-manual-keyword-lookup 2653,111419
+(defmacro quack-kwmatch-get-doc 2678,112414
+(defmacro quack-kwmatch-get-kw 2679,112461
+(defun quack-kwmatch-url 2681,112509
+(defun quack-view-manual 2691,112817
+(defvar quack-manuals-menu-cache 2712,113731
+(defvar quack-manuals-completes-cache 2713,113779
+(defun quack-invalidate-manuals-caches 2715,113828
+(defun quack-manuals-completes 2738,114772
+(defun quack-manuals-menu 2756,115506
+(defun quack-manuals-webjump-sites 2767,115915
+(defun quack-view-keyword-docs 2799,117068
+(defun quack-keyword-at-point 2812,117663
+(defun quack-prompt-for-keyword 2824,118156
+(defun quack-prompt-for-kwmatch-choice 2836,118653
+(defvar quack-run-scheme-prompt-history 2867,120010
+(defun quack-remember-program-maybe 2869,120056
+(defun quack-run-scheme-prompt 2875,120319
+(defun quack-run-scheme-prompt-completion-collection 2897,121228
+(defadvice run-scheme 2908,121715
+(defadvice scheme-proc 2948,124006
+(defun quack-force-frame-switch-to-window 2957,124294
+(defadvice switch-to-scheme 2966,124582
+(defun quack-customize 3010,126512
+(defun quack-add-auto-mode-alist 3017,126632
+(defmacro quack-str-syntax 3040,127633
+(defun quack-kludged-string-to-syntax 3046,127805
+(defconst quack-pound-syntax-string 3072,128979
+(defconst quack-bar-syntax-string 3073,129057
+(defconst quack-pound-syntax 3075,129135
+(defconst quack-bar-syntax 3076,129210
+(defvar quack-scheme-mode-keymap 3122,131331
+(define-key quack-scheme-mode-keymap 3134,131926
+(define-key quack-scheme-mode-keymap 3135,131985
+(define-key quack-scheme-mode-keymap 3136,132052
+(define-key quack-scheme-mode-keymap 3137,132113
+(define-key quack-scheme-mode-keymap 3138,132167
+(define-key quack-scheme-mode-keymap 3139,132226
+(define-key quack-scheme-mode-keymap 3140,132289
+(defmacro quack-bool-menuitem 3144,132362
+(defmacro quack-radio-menuitems 3150,132611
+(defconst quack-browser-radio-alist3165,133301
+(defconst quack-global-menuspec3178,133986
+(defun quack-install-global-menu 3279,138640
+(defconst quack-scheme-mode-menuspec3306,139564
+(defvar quack-scheme-mode-menu)3328,140600
+(defun quack-view-manual-menufilter 3339,140984
+(defun quack-view-srfi-menufilter 3343,141140
+(defun quack-defaultprogram-menufilter 3357,141656
+(defun quack-optionmenu-items-setdefaultprogram 3372,142130
+(defun quack-set-other-default-program 3402,143262
+(defun quack-forget-program 3413,143684
+(defun quack-custom-set 3418,143875
+(defun quack-option-set 3456,145472
+(defun quack-option-toggle 3466,145794
+(defun quack-update-scheme-mode-buffers 3474,146085
+(defconst quack-lambda-char 3488,146518
+(defconst quack-pretty-lambda-supported-p3490,146581
+(defconst quack-emacsish1-font-lock-keywords3495,146693
+(defconst quack-emacsish2-font-lock-keywords3531,148165
+(defun quack-pltish-num-re 3545,148648
+(defconst quack-pltish-fls-base3587,150697
+(defconst quack-pltish-fls-defnames3616,152203
+(defun quack-install-fontification 3728,156619
+(defun quack-locally-steal-key-bindings 3833,161561
+(defun quack-shared-mode-hookfunc-stuff 3840,161866
+(defun quack-inferior-scheme-mode-hookfunc 3889,163798
+(defun quack-scheme-mode-hookfunc 3892,163883
+(defvar quack-saved-compilation-error-regexp-alist 3909,164304
+(defconst quack-compilation-error-regexp-alist-additions3911,164361
+(defun quack-compile-no-line-number 3931,165127
+(defun quack-install-compilation-mode-stuff 3934,165254
+(defvar quack-pltfile-mode-hook 3957,166106
+(defvar quack-hiding-ovlcat)3959,166144
+(defvar quack-pltfile-mode-map 3964,166304
+(define-key quack-pltfile-mode-map 3965,166357
+(define-key quack-pltfile-mode-map 3966,166417
+(define-key quack-pltfile-mode-map 3967,166476
+(defun quack-pltfile-mode 3971,166572
+(defun quack-prevent-pltfile-write 4001,167692
+(defun quack-pltfile-raw 4006,167884
+(defun quack-pltfile-quit 4015,168097
+(defun quack-skip-whitespace-to-nonblank-line-beginning 4019,168177
+(defun quack-pltfile-decode-buffer 4024,168330
+
+redo.el,146
+(defvar redo-version 66,2401
+(defvar last-buffer-undo-list 69,2472
+(defvar undo-in-progress)76,2706
+(defun redo 78,2733
+(defun undo 159,6151
+
+swbuff.el,1359
+(defconst swbuff-version 193,7414
+(defconst swbuff-status-buffer-name 196,7511
+(defgroup swbuff 199,7627
+(defcustom swbuff-status-window-layout 205,7759
+(defcustom swbuff-clear-delay 221,8472
+(defcustom swbuff-separator 226,8629
+(defcustom swbuff-header 231,8764
+(defcustom swbuff-trailer 236,8864
+(defcustom swbuff-window-min-text-height 241,8966
+(defface swbuff-default-face 246,9097
+(defface swbuff-current-buffer-face 250,9201
+(defface swbuff-separator-face 254,9361
+(defcustom swbuff-exclude-buffer-regexps 258,9474
+(defcustom swbuff-load-hook 267,9926
+(defun swbuff-include-p 273,10102
+(defun swbuff-buffer-list 282,10470
+(defun swbuff-window-lines 321,12015
+(defun swbuff-adjust-window 327,12271
+(defalias 'swbuff-ignore swbuff-ignore342,12911
+(defun swbuff-one-window-p 396,14738
+(defvar swbuff-buffer-list-holder 406,15077
+(defun swbuff-layout-status-line 409,15164
+(defvar swbuff-timer 463,17163
+(defun swbuff-show-status-window 466,17238
+(defun swbuff-discard-status-window 490,18488
+(defun swbuff-pre-command-hook 497,18736
+(defun swbuff-previous-buffer 511,19305
+(defun swbuff-next-buffer 516,19502
+(defun swbuff-customize 524,19739
+(defun swbuff-switch-to-previous-buffer 530,19883
+(defun swbuff-switch-to-next-buffer 538,20115
+(defun swbuff-kill-this-buffer 546,20331
+(defun swbuff-default-load-hook 554,20583
+
+w3m-type-ahead.el,601
+(defconst w3m-type-ahead-version 27,995
+(defgroup w3m-type-ahead 30,1074
+(defcustom w3m-type-ahead-hide-url 37,1270
+(defun w3m-type-ahead 51,1774
+(defun w3m-type-ahead-regexp 63,2298
+(defun w3m-type-ahead-internal 77,2857
+(defun w3m-type-ahead-next-anchor 125,4907
+(defun w3m-type-ahead-previous-anchor 133,5216
+(defun w3m-type-ahead-anchor-end 144,5644
+(defun w3m-type-ahead-anchor-start 150,5891
+(defadvice search-forward 158,6171
+(defadvice search-backward 171,6557
+(defadvice re-search-forward 184,6952
+(defadvice re-search-backward 202,7621
+(defvar w3m-type-ahead-mode-map217,8046
+
+c-indentation.el,0
