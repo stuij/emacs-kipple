@@ -35,7 +35,7 @@
     "Revert buffer without confirmation."
     (interactive) (revert-buffer t t))
 
-(global-set-key  [f1] (lambda () (interactive) (manual-entry (current-word))))
+;; (global-set-key  [f1] (lambda () (interactive) (manual-entry (current-word))))
 
 
 ;;{{{ loadup/misc
@@ -108,7 +108,7 @@
 (add-hook 'sh-mode-hook 'sh-mode-tweak)
 
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
-(global-set-key "\C-h" 'backward-delete-char-untabify)
+;; (global-set-key "\C-h" 'backward-delete-char-untabify)
 
 ;; (keyboard-translate ?\; ?\ )
 (global-set-key [(control ?\;)] 'set-mark-command)
@@ -239,7 +239,7 @@
 
 (setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
 (recentf-mode 1)
-(global-set-key [f5] 'recentf-open-files)
+(global-set-key [f4] 'recentf-open-files)
 (setq recentf-max-saved-items 40)
 (setq recentf-max-menu-items 40)
 
@@ -391,57 +391,83 @@ Uses ``indent-region'' to indent the whole buffer."
 (slime-setup '(slime-fancy slime-banner slime-asdf slime-tramp slime-sprof))
 
 ;;(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-
-(setq slime-complete-symbol*-fancy t)
-(setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
-
-(define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
 ;;(define-key slime-mode-map [(tab)] 'slime-complete-symbol)
 ;;(define-key slime-mode-map (kbd "C-M-;") (lambda () (interactive) (insert "(")))
 ;;(define-key slime-mode-map (kbd "C-M-'") (lambda () (interactive) (insert ")")))
 
 ;;(define-key slime-repl-mode-map (kbd "C-M-[") (lambda () (interactive) (insert "(")))
 ;;(define-key slime-repl-mode-map (kbd "C-M-]") (lambda () (interactive) (insert ")")))
+;; (define-key slime-mode-map (kbd "C-,") 'backward-sexp)
+;; no term (define-key slime-mode-map "\C-." 'forward-sexp)
+
+(setq slime-complete-symbol*-fancy t)
+(setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
+
+
+
+;; keybindings
+(define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
 
 (define-key slime-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
-
 (define-key slime-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
 (define-key slime-mode-map (kbd "C-]") 'paredit-close-parenthesis)
-
-
 (define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
 (define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
-(define-key slime-mode-map (kbd "C-,") 'backward-sexp)
-(define-key slime-mode-map (kbd "C-.") 'forward-sexp)
+(define-key slime-mode-map (kbd "C-j") 'backward-sexp)
+(define-key slime-mode-map (kbd "C-l") 'forward-sexp)
 (define-key slime-mode-map (kbd "C-M-k") 'paredit-kill)
 (define-key slime-mode-map (kbd "C-k") 'kill-sexp)
 (define-key slime-mode-map (kbd "M-k") 'backward-kill-sexp)
-
-
-;; (define-key slime-mode-map (kbd "C-i") 'backward-up-list)
-(define-key slime-mode-map (kbd "C-j") 'backward-down-list)
-(define-key slime-mode-map (kbd "C-o") 'down-list)
-(define-key slime-mode-map (kbd "C-l") 'up-list)
-
-;; (define-key slime-mode-map (kbd "C-M-p") 'previous-line)
+(define-key slime-mode-map (kbd "M-u") 'backward-up-list)
+(define-key slime-mode-map (kbd "M-j") 'down-list)
+(define-key slime-mode-map (kbd "M-o") 'up-list)
+(define-key slime-mode-map (kbd "M-l") 'backward-down-list)
 (define-key slime-mode-map (kbd "C-M-l") 'recenter)
-
-
-(define-key slime-mode-map (kbd "C-'") 'paredit-splice-sexp-killing-backward)
-(define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-
-(define-key slime-mode-map (kbd "C-;") 'paredit-raise-sexp)
-
 (define-key slime-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
 (define-key slime-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
 (define-key slime-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
+(define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
+(define-key slime-mode-map (kbd "C-u") 'paredit-raise-sexp)
+
+
+(define-key slime-repl-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
+(define-key slime-repl-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
+(define-key slime-repl-mode-map (kbd "C-]") 'paredit-close-parenthesis)
+(define-key slime-repl-mode-map (kbd "C-t") 'transpose-sexps)
+(define-key slime-repl-mode-map (kbd "C-M-t") 'transpose-chars)
+(define-key slime-repl-mode-map (kbd "C-j") 'backward-sexp)
+(define-key slime-repl-mode-map (kbd "C-l") 'forward-sexp)
+(define-key slime-repl-mode-map (kbd "C-M-k") 'paredit-kill)
+(define-key slime-repl-mode-map (kbd "C-k") 'kill-sexp)
+(define-key slime-repl-mode-map (kbd "M-k") 'backward-kill-sexp)
+(define-key slime-repl-mode-map (kbd "M-u") 'backward-up-list)
+(define-key slime-repl-mode-map (kbd "M-j") 'down-list)
+(define-key slime-repl-mode-map (kbd "M-o") 'up-list)
+(define-key slime-repl-mode-map (kbd "M-l") 'backward-down-list)
+(define-key slime-repl-mode-map (kbd "C-M-l") 'recenter)
+(define-key slime-repl-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
+(define-key slime-repl-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
+(define-key slime-repl-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
+(define-key slime-repl-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
+(define-key slime-repl-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
+(define-key slime-repl-mode-map (kbd "C-u") 'paredit-raise-sexp)
+
+(define-key slime-repl-mode-map (kbd "M-i") 'slime-inspect-presentation-at-point)
+
+;; (define-key slime-mode-map (kbd "C-M-p") 'previous-line)
+
+
+
+;; no term (define-key slime-mode-map (kbd "C-'") 'paredit-splice-sexp-killing-backward)
+
 
 
 ;; Shortcut key for starting a SLIME CL connection
-(global-set-key [f9] 'slime)
-
+(global-set-key [f2] 'slime)
+(global-set-key [f3] 'revert-buffer)
 ;;(slime-setup)
+
 
 (setq slime-startup-animation nil)
 
@@ -476,7 +502,7 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;      lisp-indent-function 'common-lisp-indent-function)
 
 (add-hook 'slime-repl-mode-hook 'paredit-mode)
-(add-hook 'slime-repl-mode-hook 'hungry)
+;; (add-hook 'slime-repl-mode-hook 'hungry)
 ;;(add-hook 'slime-repl-mode-hook 'inferior-lisp-mode-hook)
 
 (add-hook 'lisp-mode-hook 'paredit-mode)
