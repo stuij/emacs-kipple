@@ -390,56 +390,53 @@ Uses ``indent-region'' to indent the whole buffer."
 
 (slime-setup '(slime-fancy slime-banner slime-asdf slime-tramp slime-sprof))
 
-(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+;;(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
 
-(eval-after-load "slime"
-  '(progn
-     (setq slime-complete-symbol*-fancy t)
-     (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
+(setq slime-complete-symbol*-fancy t)
+(setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
 
-     (define-key slime-mode-map [(tab)] 'slime-complete-symbol)
-     (define-key slime-mode-map (kbd "C-M-;") (lambda () (interactive) (insert "(")))
-     (define-key slime-mode-map (kbd "C-M-'") (lambda () (interactive) (insert ")")))
+(define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
+;;(define-key slime-mode-map [(tab)] 'slime-complete-symbol)
+;;(define-key slime-mode-map (kbd "C-M-;") (lambda () (interactive) (insert "(")))
+;;(define-key slime-mode-map (kbd "C-M-'") (lambda () (interactive) (insert ")")))
 
-     (define-key slime-repl-mode-map (kbd "C-M-[") (lambda () (interactive) (insert "(")))
-     (define-key slime-repl-mode-map (kbd "C-M-]") (lambda () (interactive) (insert ")")))
+;;(define-key slime-repl-mode-map (kbd "C-M-[") (lambda () (interactive) (insert "(")))
+;;(define-key slime-repl-mode-map (kbd "C-M-]") (lambda () (interactive) (insert ")")))
 
-     (define-key slime-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
+(define-key slime-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
 
-     ;; (define-key slime-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
-
-     (define-key slime-mode-map (kbd "C-]") 'paredit-close-parenthesis)
+(define-key slime-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
+(define-key slime-mode-map (kbd "C-]") 'paredit-close-parenthesis)
 
 
-     (define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
-     (define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
-     (define-key slime-mode-map (kbd "C-,") 'backward-sexp)
-     (define-key slime-mode-map (kbd "C-.") 'forward-sexp)
-     (define-key slime-mode-map (kbd "C-M-k") 'paredit-kill)
-     (define-key slime-mode-map (kbd "C-k") 'kill-sexp)
-     (define-key slime-mode-map (kbd "M-k") 'backward-kill-sexp)
+(define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
+(define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
+(define-key slime-mode-map (kbd "C-,") 'backward-sexp)
+(define-key slime-mode-map (kbd "C-.") 'forward-sexp)
+(define-key slime-mode-map (kbd "C-M-k") 'paredit-kill)
+(define-key slime-mode-map (kbd "C-k") 'kill-sexp)
+(define-key slime-mode-map (kbd "M-k") 'backward-kill-sexp)
 
 
-     (define-key slime-mode-map (kbd "C-i") 'backward-up-list)
-     (define-key slime-mode-map (kbd "C-j") 'backward-down-list)
-     (define-key slime-mode-map (kbd "C-o") 'down-list)
-     (define-key slime-mode-map (kbd "C-l") 'up-list)
+;; (define-key slime-mode-map (kbd "C-i") 'backward-up-list)
+(define-key slime-mode-map (kbd "C-j") 'backward-down-list)
+(define-key slime-mode-map (kbd "C-o") 'down-list)
+(define-key slime-mode-map (kbd "C-l") 'up-list)
 
-     ;; (define-key slime-mode-map (kbd "C-M-p") 'previous-line)
-     (define-key slime-mode-map (kbd "C-M-l") 'recenter)
+;; (define-key slime-mode-map (kbd "C-M-p") 'previous-line)
+(define-key slime-mode-map (kbd "C-M-l") 'recenter)
 
 
-     (define-key slime-mode-map (kbd "C-'") 'paredit-splice-sexp-killing-backward)
-     (define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
+(define-key slime-mode-map (kbd "C-'") 'paredit-splice-sexp-killing-backward)
+(define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
 
-     (define-key slime-mode-map (kbd "C-;") 'paredit-raise-sexp)
+(define-key slime-mode-map (kbd "C-;") 'paredit-raise-sexp)
 
-     (define-key slime-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
-     (define-key slime-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
-     (define-key slime-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
-     (define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
-     
-     ))
+(define-key slime-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
+(define-key slime-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
+(define-key slime-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
+(define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
+
 
 ;; Shortcut key for starting a SLIME CL connection
 (global-set-key [f9] 'slime)
@@ -503,10 +500,10 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;    (define-key paredit-mode-map (kbd "M-)")
 ;;     'paredit-close-parenthesis-and-newline)))
 
-(modify-syntax-entry ?{ "(}" lisp-mode-syntax-table)
-(modify-syntax-entry ?} "){" lisp-mode-syntax-table)
-(modify-syntax-entry ?[ "(]" lisp-mode-syntax-table)
-                     (modify-syntax-entry ?] ")[" lisp-mode-syntax-table)
+;;(modify-syntax-entry ?{ "(}" lisp-mode-syntax-table)
+;;(modify-syntax-entry ?} "){" lisp-mode-syntax-table)
+;;(modify-syntax-entry ?[ "(]" lisp-mode-syntax-table)
+;;(modify-syntax-entry ?] ")[" lisp-mode-syntax-table)
 
 ;; (require 'parenface)
 
