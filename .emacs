@@ -25,6 +25,8 @@
 
 (setq *emacs-base* (expand-file-name "/home/tstuij/emacs-vc/"))
 
+
+
 (defun replace-garbabe (bla)
   (interactive "P")
   (goto-char (point-min))
@@ -732,10 +734,15 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; hieronder werkt zonder onderliggende x11 modificatie met xkeycaps, alleen met x, anders gebruik slime-mode-map
 ;;---------------------------------------------------------------------------------------------------
 
-(keyboard-translate ?\( ?\[)
-(keyboard-translate ?\[ ?\()
-(keyboard-translate ?\) ?\])
-(keyboard-translate ?\] ?\))
+;;(keyboard-translate ?\( ?\[)
+;;(keyboard-translate ?\[ ?\()
+;;(keyboard-translate ?\) ?\])
+;;(keyboard-translate ?\] ?\))
+
+;;(define-key key-translation-map (kbd "(") (kbd "["))
+;;(define-key key-translation-map (kbd ")") (kbd "]"))
+;;(define-key key-translation-map (kbd "[") (kbd "("))
+;;(define-key key-translation-map (kbd "]") (kbd ")"))
 
 ;; (if window-system
 ;;     (progn
