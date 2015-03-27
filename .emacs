@@ -451,7 +451,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key emacs-lisp-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key emacs-lisp-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key emacs-lisp-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-(define-key emacs-lisp-mode-map (kbd "C-m") 'paredit-raise-sexp)
+;;(define-key emacs-lisp-mode-map (kbd "C-m") 'paredit-raise-sexp)
 (define-key emacs-lisp-mode-map (kbd "C-j") 'slime-beginning-of-defun)
 (define-key emacs-lisp-mode-map (kbd "C-u") 'backward-sexp)
 (define-key emacs-lisp-mode-map (kbd "C-o") 'forward-sexp)
@@ -477,7 +477,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-(define-key slime-mode-map (kbd "C-m") 'paredit-raise-sexp)
+;;(define-key slime-mode-map (kbd "C-m") 'paredit-raise-sexp)
 (define-key slime-mode-map (kbd "C-j") 'slime-beginning-of-defun)
 (define-key slime-mode-map (kbd "C-u") 'backward-sexp)
 (define-key slime-mode-map (kbd "C-o") 'forward-sexp)
@@ -501,7 +501,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-repl-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key slime-repl-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key slime-repl-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-(define-key slime-repl-mode-map (kbd "C-m") 'paredit-raise-sexp)
+;;(define-key slime-repl-mode-map (kbd "C-m") 'paredit-raise-sexp)
 (define-key slime-repl-mode-map (kbd "C-j") 'slime-beginning-of-defun)
 (define-key slime-repl-mode-map (kbd "C-u") 'backward-sexp)
 (define-key slime-repl-mode-map (kbd "C-o") 'forward-sexp)
@@ -571,7 +571,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-(add-hook 'slime-repl-mode-hook       #'enable-paredit-mode)
+(add-hook 'slime-repl-mode-hook       #'paredit-mode)
 
 ;; (defmacro defslime-start (name lisp)
 ;;  `(defun ,name ()
@@ -644,7 +644,7 @@ Uses ``indent-region'' to indent the whole buffer."
   ;;  (local-set-key "." 'semantic-complete-self-insert)
   ;;  (local-set-key ">" 'semantic-complete-self-insert))
   ;;(add-hook 'c-mode-common-hook 'my-c-mode-cedet-hook)
-  
+
   ;; Turn Semantic on
   (semantic-mode 1)
   (require 'semantic/ia)
@@ -654,7 +654,6 @@ Uses ``indent-region'' to indent the whole buffer."
   (global-set-key [(control ?\,)] 'pop-global-mark)
   (global-set-key [(control ?\.)] 'semantic-ia-fast-jump)
 
-    
   (defun my-semantic-hook ()
     (semantic-add-system-include "/home/zeno/teclo/code/clibs" 'c-mode)
     (semantic-add-system-include "/home/zeno/teclo/code/clibs" 'c++-mode))
@@ -669,7 +668,7 @@ Uses ``indent-region'' to indent the whole buffer."
   ;; enable ctags for some languages:
   ;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
   ;; (semantic-load-enable-primary-exuberent-ctags-support)
-  
+
 
   ;; Try to make completions when not typing
   (global-semantic-idle-completions-mode 1)
