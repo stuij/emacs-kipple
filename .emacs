@@ -534,16 +534,13 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;      slime-complete-symbol-function 'slime-fuzzy-complete-symbol
 ;;      lisp-indent-function 'common-lisp-indent-function)
 
-(add-hook 'slime-repl-mode-hook 'paredit-mode)
 
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
+
 ;; (add-hook 'slime-repl-mode-hook 'hungry)
 ;;(add-hook 'slime-repl-mode-hook 'inferior-lisp-mode-hook)
 
-(add-hook 'lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'hungry)
-
-(add-hook 'emacs-lisp-mode 'paredit-mode)
 (add-hook 'emacs-lisp-mode 'hungry)
 
 
@@ -554,7 +551,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-
+(add-hook 'slime-repl-mode-hook       #'enable-paredit-mode)
 
 ;; (defmacro defslime-start (name lisp)
 ;;  `(defun ,name ()
