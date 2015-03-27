@@ -415,8 +415,6 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-mode-map (kbd "C-]") 'paredit-close-parenthesis)
 (define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
 (define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
-(define-key slime-mode-map (kbd "C-j") 'backward-sexp)
-(define-key slime-mode-map (kbd "C-l") 'forward-sexp)
 (define-key slime-mode-map (kbd "C-M-k") 'paredit-kill)
 (define-key slime-mode-map (kbd "C-k") 'kill-sexp)
 (define-key slime-mode-map (kbd "M-k") 'backward-kill-sexp)
@@ -430,7 +428,10 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-(define-key slime-mode-map (kbd "C-u") 'paredit-raise-sexp)
+(define-key slime-mode-map (kbd "C-j") 'paredit-raise-sexp)
+(define-key slime-mode-map (kbd "C-p") 'slime-beginning-of-defun)
+(define-key slime-mode-map (kbd "C-u") 'backward-sexp)
+(define-key slime-mode-map (kbd "C-o") 'forward-sexp)
 
 
 (define-key slime-repl-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
@@ -438,8 +439,6 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-repl-mode-map (kbd "C-]") 'paredit-close-parenthesis)
 (define-key slime-repl-mode-map (kbd "C-t") 'transpose-sexps)
 (define-key slime-repl-mode-map (kbd "C-M-t") 'transpose-chars)
-(define-key slime-repl-mode-map (kbd "C-j") 'backward-sexp)
-(define-key slime-repl-mode-map (kbd "C-l") 'forward-sexp)
 (define-key slime-repl-mode-map (kbd "C-M-k") 'paredit-kill)
 (define-key slime-repl-mode-map (kbd "C-k") 'kill-sexp)
 (define-key slime-repl-mode-map (kbd "M-k") 'backward-kill-sexp)
@@ -453,7 +452,10 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-repl-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key slime-repl-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key slime-repl-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-(define-key slime-repl-mode-map (kbd "C-u") 'paredit-raise-sexp)
+(define-key slime-repl-mode-map (kbd "C-j") 'paredit-raise-sexp)
+(define-key slime-repl-mode-map (kbd "C-p") 'slime-beginning-of-defun)
+(define-key slime-repl-mode-map (kbd "C-u") 'backward-sexp)
+(define-key slime-repl-mode-map (kbd "C-o") 'forward-sexp)
 
 (define-key slime-repl-mode-map (kbd "M-i") 'slime-inspect-presentation-at-point)
 
