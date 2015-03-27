@@ -96,9 +96,34 @@
 
 (require 'uniquify)
 
+
+; list the packages you want
+(setq package-list '(magit))
+
+; list the repositories containing them
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("elpa" . "http://tromey.com/elpa/")))
+
+; activate all the packages (in particular autoloads)
+(package-initialize)
+
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
+;; or perhaps use-package. I should check it out:
+;; http://stackoverflow.com/questions/21064916/auto-install-emacs-packages-with-melpa
+
+
+
 
 
 
