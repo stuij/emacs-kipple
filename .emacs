@@ -408,6 +408,35 @@ Uses ``indent-region'' to indent the whole buffer."
 
 
 ;; keybindings
+(define-key emacs-lisp-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
+(define-key emacs-lisp-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
+(define-key emacs-lisp-mode-map (kbd "C-]") 'paredit-close-parenthesis)
+(define-key emacs-lisp-mode-map (kbd "C-t") 'transpose-sexps)
+(define-key emacs-lisp-mode-map (kbd "C-M-t") 'transpose-chars)
+(define-key emacs-lisp-mode-map (kbd "C-M-k") 'paredit-kill)
+(define-key emacs-lisp-mode-map (kbd "C-k") 'kill-sexp)
+(define-key emacs-lisp-mode-map (kbd "M-k") 'backward-kill-sexp)
+(define-key emacs-lisp-mode-map (kbd "M-u") 'backward-up-list)
+(define-key emacs-lisp-mode-map (kbd "M-j") 'down-list)
+(define-key emacs-lisp-mode-map (kbd "M-o") 'up-list)
+(define-key emacs-lisp-mode-map (kbd "M-l") 'backward-down-list)
+(define-key emacs-lisp-mode-map (kbd "C-M-l") 'recenter)
+(define-key emacs-lisp-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
+(define-key emacs-lisp-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
+(define-key emacs-lisp-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
+(define-key emacs-lisp-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
+(define-key emacs-lisp-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
+(define-key emacs-lisp-mode-map (kbd "C-j") 'paredit-raise-sexp)
+(define-key emacs-lisp-mode-map (kbd "C-p") 'slime-beginning-of-defun)
+(define-key emacs-lisp-mode-map (kbd "C-u") 'backward-sexp)
+(define-key emacs-lisp-mode-map (kbd "C-o") 'forward-sexp)
+
+
+
+
+
+
+
 (define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
 
 (define-key slime-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
