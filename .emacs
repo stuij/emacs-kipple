@@ -98,7 +98,7 @@
 
 
 ; list the packages you want
-(setq package-list '(magit))
+(setq package-list '(magit git-gutter))
 
 ; list the repositories containing them
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
