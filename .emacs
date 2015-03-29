@@ -258,7 +258,7 @@
 
 ;;use the windows-kind clipboard for copy/past in stead of the middle-mouse-button way
 (setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 
 (load "hungry")
@@ -823,7 +823,6 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; effect. Instead, we use of xsel, see
 ;; http://www.vergenet.net/~conrad/software/xsel/ -- "a command-line
 ;; program for getting and setting the contents of the X selection"
- 
 (when (and (getenv "DISPLAY")
            (not window-system)
            (not (eq system-type 'darwin)))
@@ -902,8 +901,11 @@ Uses ``indent-region'' to indent the whole buffer."
 (display-time-mode 1)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-(scroll-bar-mode -1)
+;; (scroll-bar-mode -1)
 (blink-cursor-mode 0)
+
+(when window-system
+  (scroll-bar-mode -1))
 
 
 ;; -------------------------------- color theme switcher --------------------------------------------------------------------------------
