@@ -157,13 +157,13 @@
                     (concat *emacs-base* "lib/color-theme-6.6.0/themes")
                     (concat *emacs-base* "lib/distel/elisp")
                     (concat *emacs-base* "lib/magit-0.7")
-                    (concat *emacs-base* "lib/apel-10.7")
+                    ;; (concat *emacs-base* "lib/apel-10.7")
                     (concat *emacs-base* "lib/emacs-git-gutter")
                     "~/stix/stix/misc/emacs")
               load-path))
 
 (require 'ess-site)
-(require 'inv-19)
+;;(require 'inv-19)
 ;; (require 'rust-mode)
 
 ;-----------------------------------------------------------------------
