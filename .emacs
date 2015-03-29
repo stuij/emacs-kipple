@@ -823,8 +823,10 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; effect. Instead, we use of xsel, see
 ;; http://www.vergenet.net/~conrad/software/xsel/ -- "a command-line
 ;; program for getting and setting the contents of the X selection"
-(unless window-system
- (when (getenv "DISPLAY")
+ 
+(when (and (getenv "DISPLAY")
+           (not window-system)
+           (not (eq system-type 'darwin)))
   ;; Callback for when user cuts
   (defun xsel-cut-function (text &optional push)
     ;; Insert text to temp-buffer, and "send" content to xsel stdin
@@ -849,7 +851,7 @@ Uses ``indent-region'' to indent the whole buffer."
   ;; Idea from
   ;; http://shreevatsa.wordpress.com/2006/10/22/emacs-copypaste-and-x/
   ;; http://www.mail-archive.com/help-gnu-emacs@gnu.org/msg03577.html
- ))
+  )
 
 
 
