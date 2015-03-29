@@ -5,9 +5,14 @@
 ;; seems only external program that needs to be installed for
 ;; this repository to work is w3m. To let flyspell do it's
 ;; thing, install ispell. To use the hyperspec, go to
-;; ~/emacs-vc/docs and do:
+;; ~/emacs-kipple/docs and do:
 ;; wget ftp://ftp.lispworks.com/pub/software_tools/reference/HyperSpec-7-0.tar.gz
 ;; tar -zxf HyperSpec-7-0.tar.gz
+
+;; configure your kipple-path and decide which systems should be loaded (none
+;; for now). It should at least say something like:
+;; (setq *emacs-base* (expand-file-name "/home/zeno/emacs-kipple/"))
+(load "~/.emacs-config")
 
 (setq whitespace-style '(face trailing lines))
 (setq whitespace-line-column 80)
@@ -21,11 +26,6 @@
 
 (add-hook 'lisp-mode-hook
           (lambda () (whitespace-mode 1)))
-
-
-(setq *emacs-base* (expand-file-name "/home/tstuij/emacs-vc/"))
-
-
 
 (defun replace-garbabe (bla)
   (interactive "P")
@@ -402,12 +402,11 @@ Uses ``indent-region'' to indent the whole buffer."
 (setq slime-lisp-implementations
       `((alisp ("alisp")) 
         (sbcl ("sbcl"))
-        (teclo ("/home/tstuij/teclo/scripts/teclo" "sbcl"))))
+        (teclo ("/home/zeno/teclo/scripts/teclo" "sbcl"))))
 
 (setq slime-default-implementation 'slime-alisp)
 
 
-(load (expand-file-name "/home/tstuij/quicklisp/slime-helper.el"))
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 
