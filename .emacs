@@ -223,6 +223,8 @@
 
 
 (autoload 'magit-status "magit" nil t)
+(setq magit-status-buffer-switch-function 'switch-to-buffer)
+
 (load "color-theme-library")
 (load "calm-charcoal")
 (require 'darcsum)
@@ -489,7 +491,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key slime-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
 (define-key slime-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
 ;;(define-key slime-mode-map (kbd "C-m") 'paredit-raise-sexp)
-(define-key slime-mode-map (kbd "C-j") 'slime-beginning-of-defun)
+(define-key paredit-mode-map (kbd "M-;") 'slime-beginning-of-defun)
 (define-key slime-mode-map (kbd "C-u") 'backward-sexp)
 (define-key slime-mode-map (kbd "C-o") 'forward-sexp)
 
