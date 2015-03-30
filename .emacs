@@ -441,9 +441,15 @@ Uses ``indent-region'' to indent the whole buffer."
               scroll-down-aggressively 0.01)
 
 
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "black")
+
 
 ;;(define-key paredit-mode-map (kbd "C-DEL") nil)
 (define-key paredit-mode-map (kbd "M-=") 'hungry-electric-delete)
+
+(define-key paredit-mode-map (kbd "M-n") 'git-gutter:next-diff)
+(define-key paredit-mode-map (kbd "M-p") 'git-gutter:previous-diff)
 
 ;; keybindings - in paredit, so we should be good for elisp, lisp and slime
 (define-key paredit-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
