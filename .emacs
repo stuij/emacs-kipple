@@ -430,6 +430,18 @@ Uses ``indent-region'' to indent the whole buffer."
 (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
 
 
+(setq scroll-step 1)
+(setq scroll-margin 1
+      scroll-conservatively 0
+      scroll-up-aggressively 0.01
+      scroll-down-aggressively 0.01)
+(setq-default scroll-up-aggressively 0.01
+              scroll-down-aggressively 0.01)
+
+
+
+(define-key paredit-mode-map (kbd "C-DEL") nil)
+(define-key paredit-mode-map (kbd "M-=") 'hungry-electric-delete)
 
 ;; keybindings
 (define-key emacs-lisp-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
