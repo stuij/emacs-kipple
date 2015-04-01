@@ -447,12 +447,9 @@ Uses ``indent-region'' to indent the whole buffer."
 
 
 ;;(define-key paredit-mode-map (kbd "C-DEL") nil)
-(define-key paredit-mode-map (kbd "M-=") 'hungry-electric-delete)
-
-(define-key paredit-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key paredit-mode-map (kbd "M-p") 'git-gutter:previous-diff)
 
 ;; keybindings - in paredit, so we should be good for elisp, lisp and slime
+(define-key paredit-mode-map (kbd "C-\\") 'hungry-electric-delete)
 (define-key paredit-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
 (define-key paredit-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
 (define-key paredit-mode-map (kbd "C-]") 'paredit-close-parenthesis)
@@ -470,11 +467,23 @@ Uses ``indent-region'' to indent the whole buffer."
 (define-key paredit-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
 (define-key paredit-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
-(define-key paredit-mode-map (kbd "C-\\") 'paredit-splice-sexp-killing-forward)
-;;(define-key paredit-mode-map (kbd "C-m") 'paredit-raise-sexp)
-(define-key paredit-mode-map (kbd "C-j") 'slime-beginning-of-defun)
+;;(define-key paredit-mode-map (kbd "M-\\") 'paredit-splice-sexp-killing-forward)
+(define-key paredit-mode-map (kbd "M-\\") 'paredit-raise-sexp)
+(define-key paredit-mode-map (kbd "C-j") 'paredit-newline)
 (define-key paredit-mode-map (kbd "C-u") 'backward-sexp)
 (define-key paredit-mode-map (kbd "C-o") 'forward-sexp)
+
+
+;; don't define git-gutter for slime-repl-mode-map
+(define-key slime-mode-map (kbd "M-n") 'git-gutter:next-diff)
+(define-key slime-mode-map (kbd "M-p") 'git-gutter:previous-diff)
+(define-key lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
+(define-key lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
+(define-key emacs-lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
+(define-key emacs-lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
+
+;;(define-key paredit-mode-map (kbd "M-p") 'slime-repl-backward-input)
+;; (define-key paredit-mode-map (kbd "M-p") 'slime-repl-forward-input)
 
 
 (define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
@@ -916,7 +925,7 @@ Uses ``indent-region'' to indent the whole buffer."
   (message "%s" (car theme-current)))
 
 ;; Set the next theme (fixed by Chris Webber - tanks)
-(defun my-theme-cycle ()		
+(defun my-theme-cycle ()
   (interactive)
   (setq theme-current (cdr theme-current))
   (if (null theme-current)
