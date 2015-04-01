@@ -409,6 +409,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (setq slime-default-implementation 'slime-alisp)
 
 
+(load (expand-file-name "/home/tstuij/quicklisp/slime-helper.el"))
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 
