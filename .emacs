@@ -192,12 +192,12 @@
 ;;       '(lambda ()
 ;;          (gtags-mode 1)))
 
-;; (add-hook 'gtags-mode-hook 
+;; (add-hook 'gtags-mode-hook
 ;;           (lambda()
 ;;             (local-set-key (kbd "M-.") 'gtags-find-tag)   ; find a tag, also M-.
 ;;             (local-set-key (kbd "M-,") 'gtags-pop-stack)))  ; reverse tag
 
-;; (add-hook 'gtags-select-mode-hook 
+;; (add-hook 'gtags-select-mode-hook
 ;;           (lambda()
 ;;             (local-set-key (kbd "M-.") 'gtags-find-tag)   ; find a tag, also M-.
 ;;             (local-set-key (kbd "M-,") 'gtags-pop-stack)))  ; reverse tag
@@ -306,7 +306,7 @@
 (add-hook 'flyspell-mode-hook
 	  '(lambda () (local-set-key [mouse-3] 'flyspell-correct-word)))
 
-;;(autoload 'flyspell-delay-command "flyspell" "Delay on command." t) (autoload 'tex-mode-flyspell-verify "flyspell" "" t) 
+;;(autoload 'flyspell-delay-command "flyspell" "Delay on command." t) (autoload 'tex-mode-flyspell-verify "flyspell" "" t)
 
 (setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
@@ -402,7 +402,7 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;; SLIME ;;;
 
 (setq slime-lisp-implementations
-      `((alisp ("alisp")) 
+      `((alisp ("alisp"))
         (sbcl ("sbcl"))
         (teclo ("/home/zeno/teclo/scripts/teclo" "sbcl"))))
 
@@ -594,10 +594,10 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;}}}
 ;;{{{ c stuff
 
-;; Make Emacs automatically hit return for you after left curly braces, 
+;; Make Emacs automatically hit return for you after left curly braces,
 ;; right curly braces, and semi-colons.
 
-;; Make Emacs use "newline-and-indent" when you hit the Enter key so 
+;; Make Emacs use "newline-and-indent" when you hit the Enter key so
 ;; that you don't need to keep using TAB to align yourself when coding.
 ;; This is akin to setting autoindent in vi.
 (require 'cc-mode)
@@ -661,7 +661,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (global-set-key "\C-m" 'newline-and-indent)
 (add-hook 'c-mode-hook 'turn-on-font-lock)
 
-;; autofill in c 
+;; autofill in c
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-hook
 	  '(lambda () (local-set-key "\C-ck" 'compile)
@@ -671,7 +671,7 @@ Uses ``indent-region'' to indent the whole buffer."
 (add-hook 'c++-mode-hook
 	  '(lambda () (local-set-key "\C-ck" 'compile)
                       (local-set-key (kbd "M-.") 'semantic-ia-fast-jump)
-                      (local-set-key (kbd "M-,") 'pop-global-mark))) 
+                      (local-set-key (kbd "M-,") 'pop-global-mark)))
 
 (add-hook 'c-mode-common-hook
 	  '(lambda () (c-toggle-auto-hungry-state 1)))
@@ -710,10 +710,10 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; ;; A number of the erlang-extended-mode key bindings are useful in the shell too
 ;; (defconst distel-shell-keys
 ;;   '(("\C-\M-i"   erl-complete)
-;;     ("\M-?"      erl-complete)	
+;;     ("\M-?"      erl-complete)
 ;;     ("\M-."      erl-find-source-under-point)
-;;     ("\M-,"      erl-find-source-unwind) 
-;;     ("\M-*"      erl-find-source-unwind) 
+;;     ("\M-,"      erl-find-source-unwind)
+;;     ("\M-*"      erl-find-source-unwind)
 ;;     )
 ;;   "Additional keys to bind when in Erlang shell.")
 
@@ -877,7 +877,7 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;}}}
 ;;{{{ appearance stuff
 
-(setq font-lock-maximum-decoration t)                                                                                                                            
+(setq font-lock-maximum-decoration t)
 
 (set-face-attribute 'mode-line nil :box nil)
 (display-time-mode 1)
@@ -961,7 +961,7 @@ Uses ``indent-region'' to indent the whole buffer."
   (message "%s" (car font-current)))
 
 ;; Set the next theme, ehh font i mean (fixed by Chris Webber - tanks)
-(defun my-font-cycle ()		
+(defun my-font-cycle ()
   (interactive)
   (setq font-current (cdr font-current))
   (if (null font-current)
@@ -969,7 +969,7 @@ Uses ``indent-region'' to indent the whole buffer."
   (set-default-font (car font-current))
   (message "%S" (car font-current)))
 
-;;(my-font-set-default)    
+;;(my-font-set-default)
 (setq font-current my-fonts)
 
 ;; ;;}}}
@@ -1005,8 +1005,8 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; (add-hook 'erc-send-pre-hook 'erc-say-my-name)
 
 ;; ;; Some basic settings for erc package
-;; (setq erc-server "irc.eu.freenode.net" 
-;;       erc-port 6667 
+;; (setq erc-server "irc.eu.freenode.net"
+;;       erc-port 6667
 ;;       erc-nick "wobbly"
 ;;       ;;      erc-user-full-name user-full-name
 ;;       ;;      erc-email-userid "zeno"
@@ -1033,18 +1033,18 @@ Uses ``indent-region'' to indent the whole buffer."
 (require 'w3m)
 (require 'w3m-e23)
 
-(defun w3m-browse-url-other-window (url &optional newwin) 
+(defun w3m-browse-url-other-window (url &optional newwin)
   (interactive
    (browse-url-interactive-arg "w3m URL: "))
   (let ((pop-up-frames nil))
-    (switch-to-buffer-other-window 
+    (switch-to-buffer-other-window
      (w3m-get-buffer-create "*w3m*"))
     (w3m-browse-url url)))
 
 
 ;; The ftp stuff is irrelevant for this discussion. I left it in anyhow.
-(setq browse-url-browser-function 
-      (list (cons "^ftp:/.*"  (lambda (url &optional nf) 
+(setq browse-url-browser-function
+      (list (cons "^ftp:/.*"  (lambda (url &optional nf)
                                 (call-interactively #'find-file-at-point url)))
             (cons "."  #'w3m-browse-url-other-window)))
 
@@ -1081,7 +1081,7 @@ Uses ``indent-region'' to indent the whole buffer."
   (let ((url (or (w3m-anchor) (w3m-image))))
     (if url
 	(let ((proc (start-process "wget" (format "*wget %s*" url)
-				   "wget" "--passive-ftp" "-nv" 
+				   "wget" "--passive-ftp" "-nv"
 				   "-P" (expand-file-name loc) url)))
 	  (with-current-buffer (process-buffer proc)
 	    (erase-buffer))
@@ -1260,7 +1260,7 @@ comprising the string, without the surrounding quotes."
 ;; (load "htmlize")
 
 ;; (autoload 'css-mode "css-mode")
-;; (setq auto-mode-alist       
+;; (setq auto-mode-alist
 ;;       (cons '("\\.css\\'" . css-mode) auto-mode-alist))
 
 ;; ;;(add-to-list 'auto-mode-alist (cons  "\\.js\\'" 'javascript-mode))
@@ -1343,7 +1343,7 @@ comprising the string, without the surrounding quotes."
 ;; (add-to-list 'mmm-mode-ext-classes-alist '(sgml-mode nil fancy-html))
 ;; ;;
 
-;; (set-face-background 'mmm-default-submode-face "DarkBlue") 
+;; (set-face-background 'mmm-default-submode-face "DarkBlue")
 ;; ;; other color option : DarkSlateBlue
 
 ;; ;;}}}
