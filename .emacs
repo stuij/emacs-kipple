@@ -123,10 +123,6 @@
 ;; http://stackoverflow.com/questions/21064916/auto-install-emacs-packages-with-melpa
 
 
-
-
-
-
 (defun sh-mode-tweak ()
   (interactive)
   (setq sh-basic-offset 4
@@ -145,7 +141,6 @@
 
 (setq load-path
       (append (list *emacs-base*
-;;                    "~/code/rust-0.8/src/etc/emacs"
                     (concat *emacs-base* "lib")
                     (concat *emacs-base* "lib/ess-5.9.1/lisp")
                     (concat *emacs-base* "lib/psgml-1.3.2")
@@ -154,11 +149,7 @@
                     (concat *emacs-base* "lib/erc-5.2")
                     (concat *emacs-base* "lib/color-theme-6.6.0")
                     (concat *emacs-base* "lib/color-theme-6.6.0/themes")
-                    (concat *emacs-base* "lib/distel/elisp")
-                    ;; (concat *emacs-base* "lib/magit-0.7")
-                    ;; (concat *emacs-base* "lib/apel-10.7")
-                    (concat *emacs-base* "lib/emacs-git-gutter")
-                    "~/stix/stix/misc/emacs")
+                    (concat *emacs-base* "lib/distel/elisp"))
               load-path))
 
 (require 'ess-site)
