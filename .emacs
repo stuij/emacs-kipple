@@ -223,7 +223,7 @@
 
 
 (autoload 'magit-status "magit" nil t)
-(setq magit-status-buffer-switch-function 'switch-to-buffer)
+;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
 (load "color-theme-library")
 (load "calm-charcoal")
