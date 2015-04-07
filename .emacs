@@ -151,12 +151,11 @@
                     (concat *emacs-base* "lib/psgml-1.3.2")
                     (concat *emacs-base* "lib/mmm-mode-0.4.8")
                     (concat *emacs-base* "lib/emacs-w3m")
-                    (concat *emacs-base* "lib/darcsum")
                     (concat *emacs-base* "lib/erc-5.2")
                     (concat *emacs-base* "lib/color-theme-6.6.0")
                     (concat *emacs-base* "lib/color-theme-6.6.0/themes")
                     (concat *emacs-base* "lib/distel/elisp")
-                    (concat *emacs-base* "lib/magit-0.7")
+                    ;; (concat *emacs-base* "lib/magit-0.7")
                     ;; (concat *emacs-base* "lib/apel-10.7")
                     (concat *emacs-base* "lib/emacs-git-gutter")
                     "~/stix/stix/misc/emacs")
@@ -431,7 +430,6 @@ Uses ``indent-region'' to indent the whole buffer."
 
 (setq slime-complete-symbol*-fancy t)
 (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
-
 
 (setq scroll-step 1)
 (setq scroll-margin 1
