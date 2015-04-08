@@ -217,7 +217,6 @@
 
 (load "color-theme-library")
 (load "calm-charcoal")
-(require 'darcsum)
 
 (autoload 'yang-mode "yang-mode" "Major mode for editing YANG models." t)
 (add-to-list 'auto-mode-alist '("\\.yang$" . yang-mode))
