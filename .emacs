@@ -12,6 +12,15 @@
 ;; configure your kipple-path and decide which systems should be loaded (none
 ;; for now). It should at least say something like:
 ;; (setq *emacs-base* (expand-file-name "/home/zeno/emacs-kipple/"))
+
+(require 'windmove)
+(windmove-default-keybindings 'meta)
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
+
 (load "~/.emacs-config")
 
 (setq whitespace-style '(face trailing lines))
