@@ -172,9 +172,14 @@
 ;-----------------------------------------------------------------------
 (require 'git-gutter)
 (global-git-gutter-mode +1)
-(custom-set-variables '(git-gutter:separator-sign ""))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (circe git-gutter magit))))
 (set-face-foreground 'git-gutter:separator "black")
-(custom-set-variables '(git-gutter:hide-gutter t))
+
 (global-set-key (kbd "M-n") 'git-gutter:next-diff)
 (global-set-key (kbd "M-p") 'git-gutter:previous-diff)
 
@@ -223,6 +228,9 @@
 
 (autoload 'magit-status "magit" nil t)
 ;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
+
+(setq magit-auto-revert-mode nil)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (load "color-theme-library")
 (load "calm-charcoal")
@@ -344,29 +352,14 @@
 ;;}}}
 ;;{{{ aangepast door emacs, soort van
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(case-fold-search t)
- '(current-language-environment "UFT-8")
- '(global-font-lock-mode t nil (font-lock))
- '(php-file-patterns nil)
- '(safe-local-variable-values (quote ((Package . CHUNGA) (Syntax . ANSI-Common-Lisp) (Package . HTML-TEMPLATE) (Package . FLEXI-STREAMS) (js2-basic-offset . 2) (Base . 10) (Package . HUNCHENTOOT) (Syntax . COMMON-LISP) (js2-basic-offset . 4) (js2-cleanup-whitespace . t))))
- '(show-paren-mode t nil (paren))
- '(speedbar-mode-specific-contents-flag t)
- '(speedbar-supported-extension-expressions (quote ("\\.\\(inc\\|php[s34]?\\)" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".f\\(90\\|77\\|or\\)?" ".ada" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" "[Mm]akefile\\(\\.in\\)?" ".lisp" ".asd" ".php")))
- '(transient-mark-mode t))
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(flymake-errline ((((class color)) (:background "Blue" :foreground "lightPink"))))
- '(flymake-warnline ((((class color)) (:background "LightBlue2" :foreground "black"))))
- '(font-lock-builtin-face ((((type tty) (class color)) (:foreground "cyan" :weight light)))))
+ )
 
 (defun trh-indent-whole-buffer ()
   "Indents the whole buffer.
@@ -407,7 +400,6 @@ Uses ``indent-region'' to indent the whole buffer."
 (setq slime-default-implementation 'slime-alisp)
 
 
-(load (expand-file-name "/home/tstuij/quicklisp/slime-helper.el"))
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 
