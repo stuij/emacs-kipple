@@ -23,7 +23,8 @@
 (defvar *setup*
   '((general () ())
     (junk () ())
-    (lisp () ())))
+    (lisp () ())
+    (python (jedi) ("python-mode" "Pymacs"))))
 
 ;; list of config files that will be loaded
 (defvar *configs* '())
@@ -47,8 +48,6 @@
     "color-theme-6.6.0"
     "color-theme-6.6.0/themes"
     "distel/elisp"
-    "python-mode"
-    "Pymacs"
     "styleguide"))
 
 ;; set the base of your emacs file
