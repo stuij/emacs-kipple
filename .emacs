@@ -19,10 +19,11 @@
 (defvar *to-be-loaded*
   '(general junk))
 
-;; a list of lists containing module setup, package names and load-paths
+;; a list of lists containing module-setup, package-names and load-paths
 (defvar *setup*
   '((general () ())
     (junk () ())
+    (vc (magit git-gutter mo-git-blame) ())
     (lisp () ())
     (python (jedi) ("python-mode" "Pymacs"))))
 
@@ -32,8 +33,7 @@
 ;; list of elisp packages that will be ensured to be installed
 ;; if this var isn't empty initially it's because i should be
 ;; less lazy and move all this stuff to their proper modules + init
-(defvar *packages* '(magit git-gutter circe mo-git-blame rust-mode
-                           auto-complete fill-column-indicator
+(defvar *packages* '(circe rust-mode auto-complete fill-column-indicator
                            autopair))
 
 ;; list of load paths that will be appended to the list of load paths ;)
@@ -118,6 +118,13 @@
 (defun add-to-load (configs)
   (setq *to-be-loaded*
         (append configs *to-be-loaded*)))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (circe git-gutter magit))))
 
 ;;-------------------------------
 

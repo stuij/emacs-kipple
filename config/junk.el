@@ -45,23 +45,6 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
-;-----------------------------------------------------------------------
-; GIT-GUTTER
-;
-; Display buffer vs git diffs in the gutter
-;-----------------------------------------------------------------------
-(require 'git-gutter)
-(global-git-gutter-mode +1)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (circe git-gutter magit))))
-(set-face-foreground 'git-gutter:separator "black")
-
-(global-set-key (kbd "M-n") 'git-gutter:next-diff)
-(global-set-key (kbd "M-p") 'git-gutter:previous-diff)
 
 
 (when (fboundp 'windmove-default-keybindings)
@@ -100,16 +83,9 @@
 ;;   (when (gtags-root-dir)
 ;;     (gtags-update)))
 
+;; (add-hook 'after-save-hook #'gtags-update-hook)
 
 
-                                        ; (add-hook 'after-save-hook #'gtags-update-hook)
-
-
-(autoload 'magit-status "magit" nil t)
-;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
-
-(setq magit-auto-revert-mode nil)
-(setq magit-last-seen-setup-instructions "1.4.0")
 
 (load "color-theme-library")
 (load "calm-charcoal")

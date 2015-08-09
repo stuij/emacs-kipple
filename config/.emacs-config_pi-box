@@ -5,4 +5,4 @@
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
 ;; load optional modules
-(add-to-load '(lisp python))
+(add-to-load '(vc lisp python))
