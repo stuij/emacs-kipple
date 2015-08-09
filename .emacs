@@ -21,9 +21,13 @@
 
 ;; a list of lists containing module-setup, package-names and load-paths
 (defvar *setup*
-  '((general () ())
+  '((general (autopair)
+             ("color-theme-6.6.0"
+              "color-theme-6.6.0/themes"))
     (junk () ())
+    (text () ())
     (vc (magit git-gutter mo-git-blame) ())
+    (misc-langs () ())
     (lisp () ())
     (python (jedi) ("python-mode" "Pymacs"))))
 
@@ -33,8 +37,7 @@
 ;; list of elisp packages that will be ensured to be installed
 ;; if this var isn't empty initially it's because i should be
 ;; less lazy and move all this stuff to their proper modules + init
-(defvar *packages* '(circe rust-mode auto-complete fill-column-indicator
-                           autopair))
+(defvar *packages* '(circe rust-mode auto-complete fill-column-indicator))
 
 ;; list of load paths that will be appended to the list of load paths ;)
 ;; if this var isn't empty initially it's because i should be
@@ -45,8 +48,6 @@
     "mmm-mode-0.4.8"
     "emacs-w3m"
     "erc-5.2"
-    "color-theme-6.6.0"
-    "color-theme-6.6.0/themes"
     "distel/elisp"
     "styleguide"))
 

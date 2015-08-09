@@ -4,13 +4,6 @@
 
 (require 'uniquify)
 
-(defun sh-mode-tweak ()
-  (interactive)
-  (setq sh-basic-offset 4
-        sh-indentation 4))
-
-(add-hook 'sh-mode-hook 'sh-mode-tweak)
-
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 ;; (global-set-key "\C-h" 'backward-delete-char-untabify)
 
@@ -21,21 +14,8 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 
-
-
 (require 'ess-site)
 ;; (require 'inv-19)
-(require 'rust-mode)
-
-;; (add-to-list 'load-path "")
-(autoload 'rust-mode "rust-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-
-(setq racer-rust-src-path "~/src/rustc-nightly/src/")
-(setq racer-cmd "~/src/racer/target/release/racer")
-(add-to-list 'load-path "~/src/racer/editors/emacs")
-(eval-after-load "rust-mode" '(require 'racer))
-(define-key rust-mode-map (kbd "M-,") 'pop-global-mark)
 
 
 ;; auto-complete
@@ -86,112 +66,8 @@
 ;; (add-hook 'after-save-hook #'gtags-update-hook)
 
 
-
-(load "color-theme-library")
-(load "calm-charcoal")
-
-(autoload 'yang-mode "yang-mode" "Major mode for editing YANG models." t)
-(add-to-list 'auto-mode-alist '("\\.yang$" . yang-mode))
-
-(autoload 'js2-mode "js2-20090723b" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-;;(require 'flymake-jslint)
-;;(add-hook 'js2-mode-hook
-;;	  (lambda () (flymake-mode t)))
-
-
-;;(require 'js-mode)
-;;(add-hook 'javascript-mode-hook 'js-mode)
-;;(autoload 'js-mode "js-mode" nil t)
-
-(load "password")
-(setq password-cache-expiry 3600)
-
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-      (cons '("\\.mdml$" . markdown-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.md$" . markdown-mode) auto-mode-alist))
-
-;; (setq printer-name "ipp://192.168.0.144")
-
-;; (setq default-major-mode 'text-mode)
-
-;;use the windows-kind clipboard for copy/past in stead of the middle-mouse-button way
-(setq x-select-enable-clipboard t)
-;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
-
-
-(load "hungry")
-(load "keywiz")
-
-(setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
-(recentf-mode 1)
-(global-set-key [f4] 'recentf-open-files)
-(setq recentf-max-saved-items 40)
-(setq recentf-max-menu-items 40)
-
-;;(global-set-key [f11] 'imenu)
-
-(setq suggest-key-bindings t)           ; turn on builtin pre-command hints
-;;(load "suggbind")
-
-
-;; ------------- buffer switchers -------------
-
-;;(when (require 'bubble-buffer nil t)
-;;  (global-set-key [f2] 'bubble-buffer-next)
-;;  (global-set-key [(shift f2)] 'bubble-buffer-previous))
-;;(setq bubble-buffer-omit-regexp "\\(^ .+$\\|\\*Messages\\*\\|*Compile-Log\\*\\|*inferior-lisp\\*\\|*Completions\\*\\|*slime-events\\*\\)")
-
-(require 'swbuff)
-(setq swbuff-exclude-buffer-regexps
-      ;;'("\\(^ .+$\\|\\*Messages\\*\\|*Compile-Log\\*\\|*inferior-lisp\\*\\|*Completions\\*\\|*slime-events\\*\\)")
-      '("^ .*" "^\\*.*\\*"))
-
-;; Make control+pageup/down scroll the other buffer
-(global-set-key [C-next] 'scroll-other-window)
-(global-set-key [C-prior] 'scroll-other-window-down)
-
-
-;;; It is always better to know current line and column number
-(column-number-mode t)
-(line-number-mode t)
-
-;;; Make all yes-or-no questions as y-or-n
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(load "flyspell")
-(add-hook 'flyspell-mode-hook
-	  '(lambda () (local-set-key [mouse-3] 'flyspell-correct-word)))
-
-;;(autoload 'flyspell-delay-command "flyspell" "Delay on command." t) (autoload 'tex-mode-flyspell-verify "flyspell" "" t)
-
-(setq-default fill-column 80)
-(setq-default indent-tabs-mode nil)
-
-                                        ;(add-hook 'text-mode-hook 'flyspell-mode)
-                                        ;(add-hook 'text-mode-hook 'longlines-mode)
-                                        ;(add-hook 'text-mode-hook 'hungry)
-
-
 ;;(load "redo")
 ;;(global-set-key "\C-\\" 'redo)
-
-;; ========== Place Backup Files in Specific Directory ==========
-
-;; Enable backup files.
-(setq make-backup-files t)
-
-;; Saved my life more than once
-(setq version-control t)
-(setq kept-new-versions 7)
-(setq delete-old-versions t)
-
-;; Save all backup file in this directory.
-(setq backup-directory-alist `(("." . ,(concat *emacs-base* "backups"))))
 
 (when (string-match "XEmacs\\|Lucid" emacs-version)
   (require 'mic-paren) ;; loading
@@ -234,207 +110,6 @@ Uses ``indent-region'' to indent the whole buffer."
 
 ;;}}}
 ;;{{{ lisp
-
-(add-to-list 'auto-mode-alist '("\\.asd$" . lisp-mode))
-
-(load "paredit")
-(global-set-key "\C-cr" 'comment-region)
-(global-set-key "\C-cu" 'uncomment-region)
-
-
-;;(require  'slime)
-
-
-;;; SLIME ;;;
-
-(setq slime-lisp-implementations
-      `(;;(alisp ("alisp"))
-        (sbcl ("sbcl"))
-        (teclo ("/home/zeno/teclo/scripts/teclo" "sbcl"))))
-
-(setq slime-default-implementation 'slime-alisp)
-
-
-;; Replace "sbcl" with the path to your implementation
-(setq inferior-lisp-program "sbcl")
-
-
-
-(require 'slime-autoloads)
-
-(slime-setup '(slime-fancy slime-banner slime-asdf slime-tramp slime-sprof))
-
-;;(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-;;(define-key slime-mode-map [(tab)] 'slime-complete-symbol)
-;;(define-key slime-mode-map (kbd "C-M-;") (lambda () (interactive) (insert "(")))
-;;(define-key slime-mode-map (kbd "C-M-'") (lambda () (interactive) (insert ")")))
-
-;;(define-key slime-repl-mode-map (kbd "C-M-[") (lambda () (interactive) (insert "(")))
-;;(define-key slime-repl-mode-map (kbd "C-M-]") (lambda () (interactive) (insert ")")))
-;; (define-key slime-mode-map (kbd "C-,") 'backward-sexp)
-;; no term (define-key slime-mode-map "\C-." 'forward-sexp)
-
-(setq slime-complete-symbol*-fancy t)
-(setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
-
-(setq scroll-step 1)
-(setq scroll-margin 1
-      scroll-conservatively 0
-      scroll-up-aggressively 0.01
-      scroll-down-aggressively 0.01)
-(setq-default scroll-up-aggressively 0.01
-              scroll-down-aggressively 0.01)
-
-
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "black")
-
-
-;;(define-key paredit-mode-map (kbd "C-DEL") nil)
-
-;; keybindings - in paredit, so we should be good for elisp, lisp and slime
-(define-key paredit-mode-map (kbd "C-\\") 'hungry-electric-delete)
-(define-key paredit-mode-map (kbd "C-M-,") (lambda () (interactive) (insert "\"")))
-(define-key paredit-mode-map [(control ?\])] 'paredit-close-parenthesis-and-newline)
-(define-key paredit-mode-map (kbd "C-]") 'paredit-close-parenthesis)
-(define-key paredit-mode-map (kbd "C-t") 'transpose-sexps)
-(define-key paredit-mode-map (kbd "C-M-t") 'transpose-chars)
-(define-key paredit-mode-map (kbd "C-M-k") 'paredit-kill)
-(define-key paredit-mode-map (kbd "C-k") 'kill-sexp)
-(define-key paredit-mode-map (kbd "M-k") 'backward-kill-sexp)
-(define-key paredit-mode-map (kbd "M-u") 'backward-up-list)
-(define-key paredit-mode-map (kbd "M-j") 'down-list)
-(define-key paredit-mode-map (kbd "M-o") 'up-list)
-(define-key paredit-mode-map (kbd "M-l") 'backward-down-list)
-(define-key paredit-mode-map (kbd "C-M-l") 'recenter)
-(define-key paredit-mode-map (kbd "M-]") 'paredit-forward-slurp-sexp)
-(define-key paredit-mode-map (kbd "M-[") 'paredit-forward-barf-sexp)
-;;(define-key paredit-mode-map (kbd "M-;") 'paredit-backward-slurp-sexp)
-(define-key paredit-mode-map (kbd "M-;") 'slime-beginning-of-defun)
-(define-key paredit-mode-map (kbd "M-'") 'paredit-backward-barf-sexp)
-;;(define-key paredit-mode-map (kbd "M-\\") 'paredit-splice-sexp-killing-forward)
-(define-key paredit-mode-map (kbd "M-\\") 'paredit-raise-sexp)
-(define-key paredit-mode-map (kbd "C-j") 'paredit-newline)
-(define-key paredit-mode-map (kbd "C-u") 'backward-sexp)
-(define-key paredit-mode-map (kbd "C-o") 'forward-sexp)
-
-
-;; don't define git-gutter for slime-repl-mode-map
-(define-key slime-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key slime-mode-map (kbd "M-p") 'git-gutter:previous-diff)
-(define-key lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
-(define-key emacs-lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key emacs-lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
-
-;;(define-key paredit-mode-map (kbd "M-p") 'slime-repl-backward-input)
-;; (define-key paredit-mode-map (kbd "M-p") 'slime-repl-forward-input)
-
-
-(define-key slime-mode-map (kbd "TAB") 'slime-complete-symbol)
-(define-key slime-repl-mode-map (kbd "M-i") 'slime-inspect-presentation-at-point)
-
-;; (define-key slime-mode-map (kbd "C-M-p") 'previous-line)
-
-
-;; still need to find a good one for this:
-;; no term (define-key slime-mode-map (kbd "C-'") 'paredit-splice-sexp-killing-backward)
-
-
-
-;; Shortcut key for starting a SLIME CL connection
-(global-set-key [f2] 'slime)
-(global-set-key [f3] 'revert-buffer)
-;;(slime-setup)
-
-
-(setq slime-startup-animation nil)
-
-
-
-
-;; so you can enter in the repl:
-(define-key paredit-mode-map (kbd "RET") nil)
-(define-key lisp-mode-shared-map (kbd "RET") 'paredit-newline)
-
-;;(define-key slime-repl-mode-map [(?\()] 'insert-parentheses)
-;;(define-key slime-repl-mode-map [(?\))] 'move-past-close-and-reindent)
-;;(define-key slime-mode-map [(return)] 'newline-and-indent)
-
-
-
-(add-hook 'inferior-lisp-mode-hook 'inferior-slime-mode)
-
-
-;;(setq inferior-lisp-program "sbcl"
-;;      slime-complete-symbol-function 'slime-fuzzy-complete-symbol
-;;      lisp-indent-function 'common-lisp-indent-function)
-
-;;(setq inferior-lisp-program "sbcl"
-;;      slime-enable-evaluate-in-emacs t
-;;      slime-outline-mode-in-events-buffer t
-;;      slime-repl-return-behaviour :send-only-if-after-complete
-;;      slime-autodoc-use-multiline-p t
-;;      slime-highlight-compiler-notes t
-;;      slime-fuzzy-completion-in-place t
-;;      slime-complete-symbol-function 'slime-fuzzy-complete-symbol
-;;      lisp-indent-function 'common-lisp-indent-function)
-
-
-
-
-;; (add-hook 'slime-repl-mode-hook 'hungry)
-;;(add-hook 'slime-repl-mode-hook 'inferior-lisp-mode-hook)
-
-;(add-hook 'lisp-mode-hook 'hungry)
-;(add-hook 'emacs-lisp-mode 'hungry)
-
-
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-(add-hook 'slime-repl-mode-hook       #'enable-paredit-mode)
-
-;; (defmacro defslime-start (name lisp)
-;;  `(defun ,name ()
-;;    (interactive)
-;;     (slime ,lisp)))
-
-;;(defslime-start cmucl "/usr/local/cmucl/bin/lisp
-;;)")
-
-;;(eval-after-load 'paredit
-;;  '(progn
-;;    (define-key paredit-mode-map (kbd "")
-;;     'paredit-close-parenthesis)
-;;    (define-key paredit-mode-map (kbd "M-)")
-;;     'paredit-close-parenthesis-and-newline)))
-
-;;(modify-syntax-entry ?{ "(}" lisp-mode-syntax-table)
-;;(modify-syntax-entry ?} "){" lisp-mode-syntax-table)
-;;(modify-syntax-entry ?[ "(]" lisp-mode-syntax-table)
-;;(modify-syntax-entry ?] ")[" lisp-mode-syntax-table)
-
-;; (require 'parenface)
-
-(defun slime-new-repl (&optional new-port)
-  "Create additional REPL for the current Lisp connection."
-  (interactive)
-  (if (slime-current-connection)
-      (let ((port (or new-port (slime-connection-port (slime-connection)))))
-	(slime-eval `(swank::create-server :port ,port))
-	(slime-connect slime-lisp-host port))
-    (error "Not connected")))
-
-
-;;}}}
-;;{{{ scheme
-
-(require 'quack)
 
 ;;}}}
 ;;{{{ c stuff
@@ -507,9 +182,6 @@ Uses ``indent-region'' to indent the whole buffer."
 (global-set-key "\C-m" 'newline-and-indent)
 (add-hook 'c-mode-hook 'turn-on-font-lock)
 
-(require 'autopair)
-(setf autopair-blink nil)
-(autopair-global-mode)
 
 ;; autofill in c
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
