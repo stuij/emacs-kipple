@@ -27,8 +27,9 @@
     (junk () ())
     (text () ())
     (vc (magit git-gutter mo-git-blame) ())
-    (misc-langs () ())
+    (misc-langs (rust-mode) ())
     (lisp () ())
+    (c () ("styleguide"))
     (python (jedi) ("python-mode" "Pymacs"))))
 
 ;; list of config files that will be loaded
@@ -37,7 +38,7 @@
 ;; list of elisp packages that will be ensured to be installed
 ;; if this var isn't empty initially it's because i should be
 ;; less lazy and move all this stuff to their proper modules + init
-(defvar *packages* '(circe rust-mode auto-complete fill-column-indicator))
+(defvar *packages* '(circe auto-complete fill-column-indicator))
 
 ;; list of load paths that will be appended to the list of load paths ;)
 ;; if this var isn't empty initially it's because i should be
@@ -48,8 +49,7 @@
     "mmm-mode-0.4.8"
     "emacs-w3m"
     "erc-5.2"
-    "distel/elisp"
-    "styleguide"))
+    "distel/elisp"))
 
 ;; set the base of your emacs file
 (defvar *emacs-base* (expand-file-name "~/emacs-kipple/"))
