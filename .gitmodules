@@ -1,0 +1,9 @@
+[submodule "lib/Pymacs"]
+	path = lib/Pymacs
+	url = https://github.com/pinard/Pymacs.git
+[submodule "lib/python-mode"]
+	path = lib/python-mode
+	url = https://git.launchpad.net/python-mode
+[submodule "lib/styleguide"]
+	path = lib/styleguide
+	url = git@github.com:google/styleguide.git
