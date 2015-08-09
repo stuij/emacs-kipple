@@ -83,8 +83,6 @@
 ;;}}}
 ;;{{{ aangepast door emacs, soort van
 
-
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -107,9 +105,6 @@ Uses ``indent-region'' to indent the whole buffer."
 
 ;;(global-set-key "\C-ci" 'trh-indent-whole-buffer)
 (global-set-key "\C-ci" 'lisp-indent-toplevel)
-
-;;}}}
-;;{{{ lisp
 
 ;;}}}
 ;;{{{ erlang
