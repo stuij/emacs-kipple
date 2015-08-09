@@ -174,12 +174,13 @@
 
 
 ; list the packages you want
-(setq package-list '(magit git-gutter circe mo-git-blame))
+(setq package-list '(magit git-gutter circe mo-git-blame rust-mode
+                           auto-complete fill-column-indicator))
 
 ; list the repositories containing them
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ;;("melpa" . "http://melpa.milkbox.net/packages/")
                          ("elpa" . "http://tromey.com/elpa/")))
 
 ; activate all the packages (in particular autoloads)
@@ -225,12 +226,74 @@
                     (concat *emacs-base* "lib/erc-5.2")
                     (concat *emacs-base* "lib/color-theme-6.6.0")
                     (concat *emacs-base* "lib/color-theme-6.6.0/themes")
-                    (concat *emacs-base* "lib/distel/elisp"))
+                    (concat *emacs-base* "lib/distel/elisp")
+                    (concat *emacs-base* "lib/python-mode")
+                    (concat *emacs-base* "lib/Pymacs"))
               load-path))
 
 (require 'ess-site)
-;;(require 'inv-19)
-;; (require 'rust-mode)
+;; (require 'inv-19)
+(require 'rust-mode)
+
+;; (add-to-list 'load-path "")
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+(setq racer-rust-src-path "~/src/rustc-nightly/src/")
+(setq racer-cmd "~/src/racer/target/release/racer")
+(add-to-list 'load-path "~/src/racer/editors/emacs")
+(eval-after-load "rust-mode" '(require 'racer))
+(define-key rust-mode-map (kbd "M-,") 'pop-global-mark)
+
+
+;; auto-complete
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+
+
+;; python mode
+(require 'python-mode)
+;; (require 'ipython)
+
+;;(setq-default py-shell-name "ipython")
+;;(setq-default py-which-bufname "IPython")
+
+;; use IPython
+(setq py-shell-name "ipython"
+      py-which-bufname "IPython"
+      python-shell-interpreter "ipython"
+      py-force-py-shell-name-p t
+      python-shell-interpreter-args ""
+      py-complete-function 'ipython-complete
+      py-shell-complete-function 'ipython-complete
+      python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+      python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+      python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+      python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
+      python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"
+      py-shell-switch-buffers-on-execute-p t
+      py-switch-buffers-on-execute-p t
+      py-smart-indentation t
+      py-split-windows-on-execute-p nil
+      )
+
+
+;; pymacs
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+
+
+; ropemacs
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+
+
 
 ;-----------------------------------------------------------------------
 ; GIT-GUTTER
@@ -459,7 +522,7 @@ Uses ``indent-region'' to indent the whole buffer."
 ;;; SLIME ;;;
 
 (setq slime-lisp-implementations
-      `((alisp ("alisp"))
+      `(;;(alisp ("alisp"))
         (sbcl ("sbcl"))
         (teclo ("/home/zeno/teclo/scripts/teclo" "sbcl"))))
 
@@ -720,14 +783,22 @@ Uses ``indent-region'' to indent the whole buffer."
 ;; autofill in c
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-hook
-	  '(lambda () (local-set-key "\C-ck" 'compile)
+	  '(lambda () (local-set-key "\C-c\C-k" 'compile)
                       (local-set-key (kbd "M-.") 'semantic-ia-fast-jump)
-                      (local-set-key (kbd "M-,") 'pop-global-mark)))
+                      (local-set-key (kbd "M-,") 'pop-global-mark)
+                      (setq c-basic-offset 4)))
 
 (add-hook 'c++-mode-hook
 	  '(lambda () (local-set-key "\C-ck" 'compile)
                       (local-set-key (kbd "M-.") 'semantic-ia-fast-jump)
-                      (local-set-key (kbd "M-,") 'pop-global-mark)))
+                      (local-set-key (kbd "M-,") 'pop-global-mark)
+                      (setq c-basic-offset 4)))
+
+(setq-default tab-width 4)
+
+(setq c-basic-offset 4)
+(define-key c++-mode-map "\C-c\C-k" 'compile)
+(setq compilation-read-command nil)
 
 (add-hook 'c-mode-common-hook
 	  '(lambda () (c-toggle-auto-hungry-state 1)))
