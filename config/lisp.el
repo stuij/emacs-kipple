@@ -15,7 +15,7 @@
 ;; (setq slime-net-coding-system 'utf-8-unix)
 
 (add-hook 'slime-repl-mode-hook
-          #'(lambda () 
+          #'(lambda ()
               (autopair-mode -1)))
 
 (setq slime-lisp-implementations

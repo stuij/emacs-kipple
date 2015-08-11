@@ -30,7 +30,8 @@
     (misc-langs (rust-mode) ())
     (lisp () ())
     (c () ("styleguide"))
-    (python (jedi) ("python-mode" "Pymacs"))))
+    (python (elpy jedi pyflakes)
+            ("python-mode" "Pymacs"))))
 
 ;; list of config files that will be loaded
 (defvar *configs* '())
@@ -92,9 +93,10 @@
 
   ;; list the repositories containing them
   (setq package-archives
-        '(("gnu" . "http://elpa.gnu.org/packages/")
+        '(("elpy" . "http://jorgenschaefer.github.io/packages/")
+          ("gnu" . "http://elpa.gnu.org/packages/")
           ("marmalade" . "https://marmalade-repo.org/packages/")
-          ;;("melpa" . "http://melpa.milkbox.net/packages/")
+          ("melpa" . "http://melpa.milkbox.net/packages/")
           ("elpa" . "http://tromey.com/elpa/")))
   ;; activate all the packages (in particular autoloads)
   (package-initialize)
