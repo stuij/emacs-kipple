@@ -7,3 +7,6 @@
 [submodule "lib/styleguide"]
 	path = lib/styleguide
 	url = git@github.com:google/styleguide.git
+[submodule "lib/elpy"]
+	path = lib/elpy
+	url = git@github.com:jorgenschaefer/elpy.git

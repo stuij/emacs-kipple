@@ -2,6 +2,7 @@
 (require 'python-mode)
 (require 'jedi)
 (require 'pyflakes)
+(require 'elpy)
 
 ;; pymacs
 (autoload 'pymacs-apply "pymacs")
@@ -15,7 +16,15 @@
 (pymacs-load "ropemacs" "rope-")
 
 (elpy-enable)
+
+(defun show-python-repl ()
+  (interactive)
+  (display-buffer (process-buffer (elpy-shell-get-or-create-process))
+                  nil
+                  'visible))
+
 (define-key elpy-mode-map (kbd "M-,") 'pop-tag-mark)
+(define-key elpy-mode-map (kbd "C-q r") 'show-python-repl)
 
 ;; (require 'ipython)
 

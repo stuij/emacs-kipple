@@ -30,8 +30,8 @@
     (misc-langs (rust-mode) ())
     (lisp () ())
     (c () ("styleguide"))
-    (python (elpy jedi pyflakes)
-            ("python-mode" "Pymacs"))))
+    (python (jedi pyflakes)
+            ("python-mode" "Pymacs" "elpy"))))
 
 ;; list of config files that will be loaded
 (defvar *configs* '())

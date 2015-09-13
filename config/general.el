@@ -25,10 +25,6 @@
 (setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
 
-
-
-
-
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "black")
 
