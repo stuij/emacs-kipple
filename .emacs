@@ -12,6 +12,8 @@
 ;; configure your kipple-path and decide which systems should be loaded (none
 ;; for now). It should at least say something like:
 ;; (setq *emacs-base* (expand-file-name "/home/zeno/emacs-kipple/"))
+;; load cl stuff
+(require 'cl-lib)
 
 ;; vars
 
@@ -58,9 +60,9 @@
 ;; logic
 (defun set-config (sym)
   (let* ((config     (assoc sym *setup*))
-         (module     (first config))
-         (packages   (second config))
-         (load-paths (third config)))
+         (module     (cl-first config))
+         (packages   (cl-second config))
+         (load-paths (cl-third config)))
     (when module
       (push module *configs*))
     (when packages
@@ -71,7 +73,7 @@
 	    (append load-paths *load-paths*)))))
 
 (defun set-configs ()
-  (loop for item in *to-be-loaded*
+  (cl-loop for item in *to-be-loaded*
         do (set-config item))
   (set-load-paths)
   (set-packages))
@@ -80,7 +82,7 @@
   (setq load-path
 	(append (list *emacs-base*
                   (concat *emacs-base* "lib"))
-		(loop for load in *load-paths*
+		(cl-loop for load in *load-paths*
 		      collect (concat *emacs-base* "lib/" load))
 		load-path)))
 
@@ -114,7 +116,7 @@
 
 (defun set-it-all-up ()
   (set-configs)
-  (loop for mod in *configs*
+  (cl-loop for mod in *configs*
         do (load-module mod)))
 
 ;; use this in .emacs-config to add your modules which should be loaded
