@@ -11,17 +11,17 @@
 ;;--------------
 ;; rust
 ;;--------------
-(require 'rust-mode)
+;; (require 'rust-mode)
 
 ;; (add-to-list 'load-path "")
-(autoload 'rust-mode "rust-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+;; (autoload 'rust-mode "rust-mode" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
-(setq racer-rust-src-path "~/src/rustc-nightly/src/")
-(setq racer-cmd "~/src/racer/target/release/racer")
-(add-to-list 'load-path "~/src/racer/editors/emacs")
-(eval-after-load "rust-mode" '(require 'racer))
-(define-key rust-mode-map (kbd "M-,") 'pop-global-mark)
+;; (setq racer-rust-src-path "~/src/rustc-nightly/src/")
+;; (setq racer-cmd "~/src/racer/target/release/racer")
+;; (add-to-list 'load-path "~/src/racer/editors/emacs")
+;; (eval-after-load "rust-mode" '(require 'racer))
+;; (define-key rust-mode-map (kbd "M-,") 'pop-global-mark)
 
 ;;--------------
 ;; yang
