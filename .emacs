@@ -32,7 +32,7 @@
     (misc-langs (rust-mode) ())
     (lisp () ())
     (c () ("styleguide"))
-    (python (jedi pyflakes)
+    (python (jedi pyflakes pyvenv company highlight-indentation yasnippet)
             ("python-mode" "Pymacs" "elpy"))))
 
 ;; list of config files that will be loaded
@@ -138,3 +138,18 @@
 ;;-------------------------------
 
 (set-it-all-up)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(python-shell-interpreter "ipython"))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; for reference: '(python-shell-interpreter "ipython")
