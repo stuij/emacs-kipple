@@ -4,7 +4,7 @@
   (interactive)
   (color-theme-install
    '(color-theme-calm-charcoal
-     ((background-color . "Grey15")
+     ((background-color . "Black")
       (background-mode . dark)
       (border-color . "Grey")
       (cursor-color . "Grey")
@@ -23,7 +23,7 @@
       (rmail-highlight-face . rmail-highlight)
       (view-highlight-face . highlight)
       (widget-mouse-face . highlight))
-     (default ((t (:stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 79 :width normal :family "misc-fixed"))))
+     (default ((t (:stipple nil :background "Black" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 79 :width normal :family "misc-fixed"))))
      (Info-title-1-face ((t (:bold t :weight bold :height 1.728 :family "helv"))))
      (Info-title-2-face ((t (:bold t :weight bold :height 1.44 :family "helv"))))
      (Info-title-3-face ((t (:bold t :weight bold :height 1.2 :family "helv"))))
@@ -65,7 +65,7 @@
      (compilation-info ((t (:bold t :foreground "Green1" :weight bold))))
      (compilation-line-number ((t (:foreground "LightGoldenrod"))))
      (compilation-warning ((t (:bold t :foreground "Orange" :weight bold))))
-     (completions-common-part ((t (:family "misc-fixed" :width normal :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "Grey" :background "Grey15" :stipple nil :height 79))))
+     (completions-common-part ((t (:family "misc-fixed" :width normal :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "Grey" :background "Black" :stipple nil :height 79))))
      (completions-first-difference ((t (:bold t :weight bold))))
      (cperl-array-face ((t (:bold t :foreground "light salmon" :weight bold))))
      (cperl-hash-face ((t (:italic t :bold t :foreground "beige" :slant italic :weight bold))))

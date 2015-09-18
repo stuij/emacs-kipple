@@ -26,8 +26,9 @@
 (setq-default indent-tabs-mode nil)
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "black")
+(set-face-background 'hl-line "gray13")
 
+(global-set-key "\C-\\" 'undo)
 
 ;; autopair
 (require 'autopair)
