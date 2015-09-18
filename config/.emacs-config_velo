@@ -1,0 +1,8 @@
+;; set the base of your emacs file
+(setq *emacs-base* (expand-file-name "~/emacs-kipple/"))
+
+;; where's our slime magic
+;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
+
+;; load optional modules
+(add-to-load '(text vc misc-langs c python)) ;; lisp
