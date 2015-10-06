@@ -11,6 +11,9 @@
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
 
+(add-hook 'python-mode-hook
+          (lambda () (whitespace-mode 1)))
+
 ;; ropemacs
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")

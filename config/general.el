@@ -24,6 +24,8 @@
 (setq whitespace-line-column 80)
 (setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
+(require 'whitespace)
+
 
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "gray13")
