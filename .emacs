@@ -28,7 +28,7 @@
               "color-theme-6.6.0/themes"))
     (junk () ())
     (text () ())
-    (vc (magit git-gutter mo-git-blame) ())
+    (vc (magit git-gutter mo-git-blame p4) ())
     (misc-langs (rust-mode) ())
     (lisp () ())
     (c () ("styleguide"))

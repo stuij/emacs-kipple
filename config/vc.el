@@ -20,3 +20,10 @@
 (set-face-foreground 'git-gutter:separator "black")
 (global-set-key (kbd "M-n") 'git-gutter:next-diff)
 (global-set-key (kbd "M-p") 'git-gutter:previous-diff)
+
+;-----------------------------------------------------------------------
+; P4
+;
+; P4 in emacs
+;-----------------------------------------------------------------------
+(require 'p4)
