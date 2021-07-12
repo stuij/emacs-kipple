@@ -76,12 +76,12 @@
 
 
 ;; don't define git-gutter for slime-repl-mode-map
-(define-key slime-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key slime-mode-map (kbd "M-p") 'git-gutter:previous-diff)
-(define-key lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
-(define-key emacs-lisp-mode-map (kbd "M-n") 'git-gutter:next-diff)
-(define-key emacs-lisp-mode-map (kbd "M-p") 'git-gutter:previous-diff)
+(define-key slime-mode-map (kbd "M-n") 'git-gutter:next-hunk)
+(define-key slime-mode-map (kbd "M-p") 'git-gutter:previous-hunk)
+(define-key lisp-mode-map (kbd "M-n") 'git-gutter:next-hunk)
+(define-key lisp-mode-map (kbd "M-p") 'git-gutter:previous-hunk)
+(define-key emacs-lisp-mode-map (kbd "M-n") 'git-gutter:next-hunk)
+(define-key emacs-lisp-mode-map (kbd "M-p") 'git-gutter:previous-hunk)
 
 ;;(define-key paredit-mode-map (kbd "M-p") 'slime-repl-backward-input)
 ;; (define-key paredit-mode-map (kbd "M-p") 'slime-repl-forward-input)

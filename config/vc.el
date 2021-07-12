@@ -18,8 +18,8 @@
 (require 'git-gutter)
 (global-git-gutter-mode +1)
 (set-face-foreground 'git-gutter:separator "black")
-(global-set-key (kbd "M-n") 'git-gutter:next-diff)
-(global-set-key (kbd "M-p") 'git-gutter:previous-diff)
+(global-set-key (kbd "M-n") 'git-gutter:next-hunk)
+(global-set-key (kbd "M-p") 'git-gutter:previous-hunk)
 
 ;-----------------------------------------------------------------------
 ; P4
